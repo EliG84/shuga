@@ -1,7 +1,7 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject, of, Subject } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, takeUntil } from 'rxjs/operators';
 import { appLanguages, ILanguageConfig } from 'src/app/models/language.models';
 import { localStorageKeys } from '../general-consts';
 import { LocalStorageService } from './local-storage.service';
@@ -23,7 +23,8 @@ export class LanguageService implements OnDestroy {
         this.localStorageService.setItem(localStorageKeys.APP_LANG,lang);
         this.isRtl = lang.isRtl;
         return this.translateService.use(lang.name);
-      })
+      }),
+      takeUntil(this.destroy$)
     ).subscribe();
    }
 
