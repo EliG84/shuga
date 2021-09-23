@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Observable } from 'rxjs';
+import { ILanguageConfig } from './models/language.models';
+import { LanguageService } from './shared/services/language.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +11,11 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   title = 'shuga';
-  constructor(private translate: TranslateService){
+  appLanguages$!: Observable<ILanguageConfig[]>;
+
+  constructor(public translate: TranslateService,
+              public languageService: LanguageService){
     this.translate.setDefaultLang('he');
+    this.appLanguages$ = languageService.languages$;
   }
 }

@@ -5,6 +5,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
+// material imports
+import { MatMenuModule } from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+
 const classes: any[] = [];
 const sharedModules: any[] = [];
 const externalModules: any[] = [
@@ -13,7 +17,9 @@ const externalModules: any[] = [
   HttpClientModule,
   CommonModule,
   RouterModule,
-  TranslateModule
+  TranslateModule,
+  MatMenuModule,
+  MatButtonModule
 ];
 
 
