@@ -1,0 +1,23 @@
+.toolbar {
+  height: var(--app-header-height);
+  background-color: var(--blue-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  button {
+    background: transparent;
+    background-color: transparent;
+    height: 100%;
+    animation: none;
+    border: none;
+    mat-icon {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+    }
+  }
+}

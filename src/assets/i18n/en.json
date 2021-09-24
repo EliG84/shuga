@@ -1,6 +1,16 @@
 {
-  "HEADER": {},
-  "TEST": {
-    "APP_NAME": "The name of the app"
+  "HEADER": {
+    "NAVIGATION": {
+      "HOME": "Main creen",
+      "ADD_MEAL": "Add a meal",
+      "MEALS_LIST": "Meals list",
+      "GRAPH": "Graphs",
+      "LOGOUT": "Logout"
+    }
+  },
+  "LOGIN": {
+    "EMAIL": "Your Email",
+    "PASSWORD": "Password",
+    "SUBMIT": "Login"
   }
 }

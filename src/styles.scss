@@ -1,13 +1,107 @@
-@import './cutom-material-desing.scss';
+@import './custom-material-desing.scss';
+@import './colors.scss';
+@import './general-variables.scss';
 
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Heebo, Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Heebo, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  * {
+    box-sizing: border-box;
+  }
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-column-reverse {
+  flex-direction: column-reverse;
+}
+
+.justify-flex-start {
+  justify-content: flex-start;
+}
+
+.justify-flex-end {
+  justify-content: flex-end;
+}
+
+.display-none {
+  display: none;
+}
+
+.direction-rtl {
+  direction: rtl;
+}
+
+button.mat-menu-item {
+  text-align: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
 
 [data-direction="rtl"] {
   .toolbar {
     flex-direction: row-reverse;
   }
+  .mat-menu-item {
+    direction: rtl;
+    mat-icon {
+      margin-right: 0;
+      margin-left: 16px;
+    }
+  }
 }
+
+app-header {
+  display: none;
+  visibility: hidden;
+}
+
+[data-location="login"],
+[data-location="register"],
+[data-location="app"] {
+  app-header {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+[data-location="meals"],
+[data-location="graphs"] {
+  app-header {
+    display: revert;
+    visibility: revert;
+  }
+}
+
+// [data-display="mobile"] {
+//   body::-webkit-scrollbar {
+//     display: none;
+//   }
+//   body {
+//     -ms-overflow-style: none;
+//     scrollbar-width: none;
+//   }
+// }

@@ -8,8 +8,10 @@ import { TranslateModule } from '@ngx-translate/core';
 // material imports
 import { MatMenuModule } from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
+import { HeaderComponent } from './components/header/header.component';
+import {MatIconModule} from '@angular/material/icon';
 
-const classes: any[] = [];
+const classes: any[] = [HeaderComponent];
 const sharedModules: any[] = [];
 const externalModules: any[] = [
   FormsModule,
@@ -19,7 +21,8 @@ const externalModules: any[] = [
   RouterModule,
   TranslateModule,
   MatMenuModule,
-  MatButtonModule
+  MatButtonModule,
+  MatIconModule
 ];
 
 

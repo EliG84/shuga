@@ -1,0 +1,71 @@
+body {
+  --red-1: #e82222;
+  --red-2: #f44336;
+  --green-1: #27cc42;
+  --blue-1: #3240ff;
+  --blue-2: #9604FF;
+  --blue-3: #1524eb;
+  --blue-4: #3240FF46;
+  --blue-5: #4450F24D;
+  --blue-6: #4450F233;
+  --light-blue-1: #f3f4ff;
+  --light-blue-2: #3240FF0F;
+  --light-blue-3: #EFF0FF;
+  --light-blue-4: #3240FF88;
+  --light-blue-5: #3240FF1A;
+  --light-blue-6: #3240FF08;
+  --light-blue-7: #778ead;
+  --light-blue-8: #3240FF33;
+  --light-blue-9: #F8F9FF;
+  --light-blue-10: #3240FF24;
+  --light-blue-11: #3240ff4e;
+  --light-blue-12: #e6dcff;
+  --light-blue-13: #3240FF2C;
+  --light-gray-1: #fdfdfd;
+  --light-gray-2: #efefef;
+  --light-gray-3: #e8e8e8;
+  --light-gray-4: #F4F5FC;
+  --light-gray-5: #f6f6f6;
+  --light-gray-6: #FCFCFC;
+  --light-gray-7: #231F2014;
+  --light-gray-8: #F7F7F7;
+  --mid-gray-1: #3240ff0f;
+  --mid-gray-2: #2F2D51B3;
+  --dark-gray-1: #2f2d51;
+  --dark-gray-2: #2c3548;
+  --dark-gray-3: #454953;
+  --dark-gray-4: #3240ff14;
+  --dark-gray-5: #231F20;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --background-stripes-colors: linear-gradient(
+    113deg,
+    var(--light-blue-2) 17.65%,
+    var(--color-white) 17.65%,
+    var(--color-white) 50%,
+    var(--light-blue-2) 50%,
+    var(--light-blue-2) 67.65%,
+    var(--color-white) 67.65%,
+    var(--color-white) 100%
+  );
+  --background-stripes-size: 18.47px 43.51px;
+
+  --select-option-hover-bg: #3240ff;
+  --notes-header-color-desktop: #454953;
+  --notes-header-color-mobile: #2c3548;
+
+  //--background-stripes-colors: linear-gradient(113deg, var(--light-blue-2) 17.65%, var(--color-white) 17.65%, var(--color-white) 50%, var(--light-blue-2) 50%, var(--light-blue-2) 67.65%, var(--color-white) 67.65%, var(--color-white) 100%);
+  //--background-stripes-size: 18.47px 43.51px;
+
+//  --background-stripes-colors: linear-gradient(
+//    115deg,
+//    var(--color-white) 30%,
+//    var(--light-blue-2) 30%,
+//    var(--light-blue-2) 50%,
+//    var(--color-white) 50%,
+//    var(--color-white) 80%,
+//    var(--light-blue-2) 80%,
+//    var(--light-blue-2) 100%
+//  );
+//  --background-stripes-size: 16.55px 35.49px;
+ }

@@ -21,8 +21,31 @@ export class HttpService {
      const requestOptions = this.createRequestOptions(options, 'GET');
      return this.httpClient.get<HttpResponseBody<T>>(`${this.baseUrl}/${url}`, requestOptions)
      .pipe(
-       share(),
        map((e) => this.handleResponse(e as HttpResponse<HttpResponseBody<T>>))
+     );
+   }
+
+   post<T>(url: string, body?: any, options?: any): Observable<any> {
+     const requestOptions = this.createRequestOptions(options, 'POST');
+     return this.httpClient.post<HttpResponseBody<T>>(`${this.baseUrl}/${url}`, body, requestOptions)
+     .pipe(
+       map((e) => this.handleResponse(e as HttpResponse<HttpResponseBody<T>>)),
+     );
+   }
+
+   put<T>(url: string, body?: any, options?: any): Observable<any> {
+     const requestOptions = this.createRequestOptions(options, 'PUT');
+     return this.httpClient.put<HttpResponseBody<T>>(`${this.baseUrl}/${url}`, body, requestOptions)
+     .pipe(
+       map((e) => this.handleResponse(e as HttpResponse<HttpResponseBody<T>>))
+     );
+   }
+
+   delete<T>(url: string, options?: any): Observable<any> {
+     const requestOptions = this.createRequestOptions(options, 'DELETE');
+     return this.httpClient.delete(`${this.baseUrl}/${url}`, requestOptions)
+     .pipe(
+       map(this.handleResponse as any)
      );
    }
 

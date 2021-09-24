@@ -1,0 +1,26 @@
+<div class="toolbar" role="banner">
+
+  <button mat-button [matMenuTriggerFor]="navigation" role="navigation"><mat-icon>more_vert</mat-icon></button>
+  <mat-menu #navigation="matMenu">
+    <button *ngFor='let option of navigationItems' mat-menu-item [routerLink]='option.route'>
+      <mat-icon>{{option.icon}}</mat-icon>
+      <span>{{option.name | translate}}</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>exit_to_app</mat-icon>
+      <span>{{'HEADER.NAVIGATION.LOGOUT' | translate}}</span>
+    </button>
+  </mat-menu>
+
+
+  <ng-container *ngIf="appLanguages$ | async as languages">
+    <button mat-button [matMenuTriggerFor]="translation" role="translation">{{languageService.systemLang.displayName}}</button>
+      <mat-menu #translation="matMenu">
+        <button *ngFor='let lang of languages'
+                mat-menu-item
+                (click)='languageService.systemLang = lang'
+                >{{lang.displayName}}</button>
+      </mat-menu>
+  </ng-container>
+
+</div>
