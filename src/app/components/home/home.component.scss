@@ -1,0 +1,25 @@
+@import '../../../general-mixins.scss';
+
+:host {
+  height: 100%;
+}
+
+.home-menu {
+  height: 100%;
+  padding: 1rem;
+  @include flex-setup(column, 0 0 auto);
+
+  label {
+    white-space: pre-wrap;
+  }
+
+  button {
+    flex: 1;
+    padding: 1rem;
+    color: var(--light-gray-2);
+    font-size: 5vh;
+    background: var(--light-blue-4);
+    border-radius: var(--background-stripes-size);
+    margin: 0.5rem 0;
+  }
+}

@@ -16,8 +16,8 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if ((route.url[0].path === RoutingPath.LOGIN || route.url[0].path === RoutingPath.LOGIN) &&
-           this.localStorage.getItem(localStorageKeys.APP_TOKEN)) {
+      if (route.url[0].path === RoutingPath.AUTH &&
+           !!this.localStorage.getItem(localStorageKeys.APP_TOKEN)) {
              return this.router.navigate(['/']);
            }
       document.querySelector('body')?.setAttribute(route.data.attributeKey, route.data.attributeValue);
@@ -27,7 +27,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     childRoute: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       document.querySelector('body')?.setAttribute(childRoute.data.attributeKey, childRoute.data.attributeValue);
-      return this.localStorage.getItem(localStorageKeys.APP_TOKEN) || this.router.navigate(['/', RoutingPath.LOGIN]);
+      return !!this.localStorage.getItem(localStorageKeys.APP_TOKEN) || this.router.navigate(['/', RoutingPath.AUTH]);
   }
 
 }

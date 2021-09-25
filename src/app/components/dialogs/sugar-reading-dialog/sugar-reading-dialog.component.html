@@ -1,0 +1,28 @@
+<div class="dialog-container">
+
+  <div class="dialog-header-container">
+    <mat-icon (click)='closeDialog()'>close</mat-icon>
+  </div>
+
+  <div class="dialog-content-container">
+    <igx-date-picker class="date-picker-container" #datePicker [(ngModel)]='date'>
+      <label igxLabel>{{'DIALOGS.DATE' | translate}}</label>
+    </igx-date-picker>
+
+    <igx-time-picker class="time-picker-container" [(ngModel)]='date'>
+      <label igxLabel>{{'DIALOGS.TIME' | translate}}</label>
+    </igx-time-picker>
+
+    <div class="measure-input-container">
+      <label for="measure">{{'DIALOGS.MEASURE' | translate}}</label>
+      <input type="number" min="0" max="200" name="measure" id="measure" [(ngModel)]='result'>
+    </div>
+  </div>
+
+  <div class="dialog-actions-container">
+    <button mat-raised-button (click)='data ? update() : create()'>{{ data ? 'DIALOGS.UPDATE' : 'DIALOGS.CREATE' | translate}}</button>
+  </div>
+
+</div>
+
+

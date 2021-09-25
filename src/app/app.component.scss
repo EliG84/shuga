@@ -1,1 +1,17 @@
+@import '../general-mixins.scss';
 
+.app-container {
+  @include flex-setup(column, 0 0 auto);
+  height: 100%;
+
+  .main-container {
+    @include flex-setup(column, 0 0 auto);
+    height: 100%;
+
+    .component-container {
+      //@include flex-setup(column, 0 0 auto, center);
+      @include flex-setup(column, 0 0 auto);
+      height: 100%;
+    }
+  }
+}

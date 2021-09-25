@@ -2,13 +2,9 @@
 
   <button mat-button [matMenuTriggerFor]="navigation" role="navigation"><mat-icon>more_vert</mat-icon></button>
   <mat-menu #navigation="matMenu">
-    <button *ngFor='let option of navigationItems' mat-menu-item [routerLink]='option.route'>
+    <button *ngFor='let option of navigationItems' mat-menu-item (click)='option.action()'>
       <mat-icon>{{option.icon}}</mat-icon>
       <span>{{option.name | translate}}</span>
-    </button>
-    <button mat-menu-item>
-      <mat-icon>exit_to_app</mat-icon>
-      <span>{{'HEADER.NAVIGATION.LOGOUT' | translate}}</span>
     </button>
   </mat-menu>
 

@@ -1,0 +1,10 @@
+<form [formGroup]='registrationForm' class="form">
+  <label for="email">{{'AUTH.EMAIL' | translate}}</label>
+  <input formControlName='email' type="email" name="" id="">
+  <label for="password">{{'AUTH.PASSWORD' | translate}}</label>
+  <input formControlName='password' type="password" name="password" id="password">
+  <label for="repeat_password">{{'AUTH.REPEAT_PASSWORD' | translate}}</label>
+  <input formControlName='repeat_password' type="password" name="repeat_password" id="repeat_password">
+  <button type="button" (click)='submit()' [disabled]='registrationForm.invalid'>{{'AUTH.REGISTER' | translate}}</button>
+  <button type="button" [routerLink]="['/','auth','login']">{{'AUTH.SUBMIT' | translate}}</button>
+</form>

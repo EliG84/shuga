@@ -25,13 +25,24 @@ export class AuthService {
     .subscribe((token) => {
       this.localStorage.setItem(localStorageKeys.APP_TOKEN,token);
       this.router.navigate(['/']);
+    });
+  }
+
+  regitser({email, password, repeat_password}: IRegisterRequest): void {
+    const body = {
+      ['email']: email,
+      ['password']: password,
+      ['repeat_password']: repeat_password
+    }
+    this.httpService.post(`${AUTH_API.AUTH}/${AUTH_API.SINGUP}`, body)
+    .subscribe((token) => {
+      this.localStorage.setItem(localStorageKeys.APP_TOKEN, token);
+      this.router.navigate(['/']);
     })
   }
 
-  regitser(request: IRegisterRequest): void {}
-
   logout(): void {
     this.localStorage.clearAll();
-    this.router.navigate(['/', RoutingPath.LOGIN]);
+    this.router.navigate(['/', RoutingPath.AUTH]);
   }
 }

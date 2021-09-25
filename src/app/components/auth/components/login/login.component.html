@@ -1,11 +1,12 @@
 <form [formGroup]='loginForm' class="form">
 
-  <label for="email">{{'LOGIN.EMAIL' | translate}}</label>
+  <label for="email">{{'AUTH.EMAIL' | translate}}</label>
   <input formControlName='email' type="email" name="email" id="email">
 
-  <label for="password">{{'LOGIN.PASSWORD' | translate}}</label>
+  <label for="password">{{'AUTH.PASSWORD' | translate}}</label>
   <input formControlName='password' type="password" name="password" id="password">
   <button type="button" (click)='submit()' [disabled]='loginForm.invalid'>
-    {{'LOGIN.SUBMIT' | translate}}
+    {{'AUTH.SUBMIT' | translate}}
   </button>
+  <button type="button" [routerLink]="['/','auth','register']">{{'AUTH.REGISTER' | translate}}</button>
 </form>

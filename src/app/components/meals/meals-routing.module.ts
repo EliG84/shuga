@@ -1,13 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MealsComponent } from './meals.component';
+import { MealsRoutingPath } from 'src/app/models/routing.models';
+import { MealsListComponent } from './components/meals-list/meals-list.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: MealsComponent,
+    redirectTo: MealsRoutingPath.MEALS_LIST,
     pathMatch: 'full',
-  }
+  },
+  {
+    path: MealsRoutingPath.MEALS_LIST,
+    component: MealsListComponent
+  },
 ];
 
 @NgModule({

@@ -8,7 +8,9 @@ import localeIl from '@angular/common/locales/he';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './core/services/auth.interceptor';
+import { SugarReadingDialogComponent } from './components/dialogs/sugar-reading-dialog/sugar-reading-dialog.component';
 
 registerLocaleData(localeIl);
 
@@ -18,7 +20,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SugarReadingDialogComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -30,11 +32,13 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    }),
+    })
   ],
   providers: [
-    {provide: LOCALE_ID, useValue: 'he-IL'}
+    { provide: LOCALE_ID, useValue: 'he-IL' },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

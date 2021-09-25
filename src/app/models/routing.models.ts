@@ -1,15 +1,19 @@
 export const RoutingPath = {
+  AUTH: 'auth',
+  APP: 'app',
+}
+
+export const AuthRoutingPath = {
   LOGIN: 'login',
   REGISTER: 'register',
-  APP: 'app',
 }
 
 export const AppRoutingPath = {
   MEALS: 'meals',
   GRAPHS: 'graphs',
+  MORNING_READINGS: 'morning-measurements'
 }
 
 export const MealsRoutingPath = {
-  ADD_MEAL: 'add-meal',
-  EDIT_MEAL: 'edit-meal',
+  MEALS_LIST: 'list',
 }

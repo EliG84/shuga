@@ -2,15 +2,41 @@
   "HEADER": {
     "NAVIGATION": {
       "HOME": "למסך הראשי",
-      "ADD_MEAL": "הוסיפי ארוחה",
       "MEALS_LIST": "כל הארוחות",
+      "MORNING_READINGS": "למדדי בוקר",
+      "ADD_MORGINING_READING": "הוסיפי מדד בוקר חדש",
       "GRAPH": "לגרפים",
       "LOGOUT": "התנתקי"
     }
   },
-  "LOGIN": {
+  "AUTH": {
     "EMAIL": "דואר אלקטרוני",
     "PASSWORD": "סיסמה",
-    "SUBMIT": "כניסה"
+    "REPEAT_PASSWORD": "הקלידי את הסיסמה שוב",
+    "SUBMIT": "כניסה",
+    "REGISTER": "הרשמה"
+  },
+  "HOME": {
+    "MEALS": "צפיה בכל הארוחות",
+    "ADD_MORGINING_READING": "הוסיפי מדד בוקר חדש",
+    "MORNING_READINGS": "צפיה בכל ממדי הבוקר",
+    "GRAPHS": "מעבר לגרפים",
+    "LOG_OUT": "התנתקי"
+  },
+  "SNACKBAR": {
+    "CLOSE": "סגור"
+  },
+  "DIALOGS": {
+    "DATE": "תאריך",
+    "TIME": "שעה",
+    "MEASURE": "מדידה",
+    "CREATE": "יצירה",
+    "UPDATE": "עדכון",
+    "MESSAGES": {
+      "SUCCESS": "שינוי נקלט בהצלחה"
+    }
+  },
+  "EMPTY_PAGE": {
+    "GENERIC_EMPTY": "לא נמצאו תוצאות"
   }
 }

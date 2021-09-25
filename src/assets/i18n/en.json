@@ -2,15 +2,41 @@
   "HEADER": {
     "NAVIGATION": {
       "HOME": "Main creen",
-      "ADD_MEAL": "Add a meal",
       "MEALS_LIST": "Meals list",
+      "MORNING_READINGS": "Morning Measurements",
+      "ADD_MORGINING_READING": "Add new morning measure",
       "GRAPH": "Graphs",
       "LOGOUT": "Logout"
     }
   },
-  "LOGIN": {
+  "AUTH": {
     "EMAIL": "Your Email",
     "PASSWORD": "Password",
-    "SUBMIT": "Login"
+    "REPEAT_PASSWORD": "Retype Password",
+    "SUBMIT": "Login",
+    "REGISTER": "Register"
+  },
+  "HOME": {
+    "MEALS": "View my meals",
+    "MORNING_READINGS": "Morning Measurements",
+    "ADD_MORGINING_READING": "Add new morning measure",
+    "GRAPHS": "View graphs",
+    "LOG_OUT": "Logout"
+  },
+  "SNACKBAR": {
+    "CLOSE": "Close"
+  },
+  "DIALOGS": {
+    "DATE": "Date",
+    "TIME": "Time",
+    "MEASURE": "Measurement",
+    "CREATE": "Create",
+    "UPDATE": "Update",
+    "MESSAGES": {
+      "SUCCESS": "Completed successfuly"
+    }
+  },
+  "EMPTY_PAGE": {
+    "GENERIC_EMPTY": "No Results"
   }
 }

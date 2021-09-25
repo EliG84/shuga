@@ -1,0 +1,15 @@
+<div class="readings-container" *ngIf='readings$ | async as readings; else noReadings'>
+  <div class="reading" *ngFor='let reading of readings'>
+    <span class="edit"><mat-icon>edit</mat-icon></span>
+    <span>{{reading.date | date : 'dd/MM/YY' }}</span>
+    <span>{{reading.time | date : 'hh:mm' }}</span>
+    <span>{{reading.result}}</span>
+    <span class="delete"><mat-icon>delete_outline</mat-icon></span>
+  </div>
+</div>
+
+<ng-template #noReadings>
+  <div class="readings-container readings-container--empty">
+    <h3>{{'EMPTY_PAGE.GENERIC_EMPTY' | translate}}</h3>
+  </div>
+</ng-template>

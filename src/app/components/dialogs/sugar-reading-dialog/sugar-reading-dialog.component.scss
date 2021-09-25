@@ -1,0 +1,30 @@
+.dialog-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  > * {
+    width: 100%;
+    direction: rtl;
+  }
+}
+
+.dialog-header-container,
+.dialog-actions-container {
+  height: 5%;
+
+  button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.measure-input-container input {
+  margin: 0 1rem;
+}
+
+.dialog-content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

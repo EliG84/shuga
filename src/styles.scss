@@ -2,19 +2,24 @@
 @import './colors.scss';
 @import './general-variables.scss';
 
-/* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
-body {
+html, body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
   font-family: Heebo, Roboto, "Helvetica Neue", sans-serif;
   font-size: 14px;
+}
+body {
+  background: var(--blue-6);
   * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--blue-4) var(--color-white);
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  overflow: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -89,6 +94,7 @@ app-header {
 }
 
 [data-location="meals"],
+[data-location="morning-measurements"],
 [data-location="graphs"] {
   app-header {
     display: revert;
@@ -105,3 +111,14 @@ app-header {
 //     scrollbar-width: none;
 //   }
 // }
+
+@import "~igniteui-angular/lib/core/styles/themes/index";
+// Uncomment the following lines if you want to add a custom palette:
+// $primary: #731963 !default;
+// $secondary: #ce5712 !default;
+// $app-palette: igx-palette($primary, $secondary);
+
+/* autoprefixer grid: on */
+
+@include igx-core();
+@include igx-theme($default-palette);

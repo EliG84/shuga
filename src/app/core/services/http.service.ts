@@ -2,9 +2,9 @@ import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/comm
 import { Injectable } from '@angular/core';
 import { has } from 'lodash';
 import { Observable } from 'rxjs';
-import { catchError, map, share } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { HttpResponseBody } from '../models/api.models';
+import { HttpResponseBody } from '../models/core-api.models';
 import { AppError } from '../models/error.models';
 
 @Injectable({

@@ -6,16 +6,10 @@ import { dataAttributeKeys } from './shared/general-consts';
 
 const routes: Routes = [
   {
-    path: RoutingPath.LOGIN,
+    path: RoutingPath.AUTH,
     canActivate: [AuthGuard],
-    loadChildren: () => import('./components/login/login.module').then(m => m.LoginModule),
-    data: {attributeKey: dataAttributeKeys.LOCAITON, attributeValue: RoutingPath.LOGIN}
-  },
-  {
-    path: RoutingPath.REGISTER,
-    canActivate: [AuthGuard],
-    loadChildren: () => import('./components/registration/registration.module').then(m => m.RegistrationModule),
-    data: {attributeKey: dataAttributeKeys.LOCAITON, attributeValue: RoutingPath.REGISTER}
+    loadChildren: () => import('./components/auth/auth.module').then(m => m.AuthModule),
+    data: {attributeKey: dataAttributeKeys.LOCAITON, attributeValue: RoutingPath.AUTH}
   },
   {
     path: '',

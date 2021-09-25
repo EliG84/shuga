@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MealsRoutingModule } from './meals-routing.module';
-import { MealsComponent } from './meals.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { MealsListComponent } from './components/meals-list/meals-list.component';
 
 
 @NgModule({
-  declarations: [MealsComponent],
-  exports: [MealsComponent],
+  declarations: [MealsListComponent],
+  exports: [MealsListComponent],
   imports: [
     CommonModule,
     MealsRoutingModule,

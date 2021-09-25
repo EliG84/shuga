@@ -1,4 +1,7 @@
 
-<h2>In home component</h2>
-
+<div class="home-menu">
+  <button mat-button *ngFor='let item of menuItems' (click)='item.action()'>
+    <label>{{item.name | translate}}</label>
+  </button>
+</div>
 <router-outlet></router-outlet>

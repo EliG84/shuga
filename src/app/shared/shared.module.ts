@@ -10,6 +10,14 @@ import { MatMenuModule } from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import { HeaderComponent } from './components/header/header.component';
 import {MatIconModule} from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+// 3rd party imports
+import {
+	IgxDatePickerModule,
+	IgxTimePickerModule
+ } from "igniteui-angular";
 
 const classes: any[] = [HeaderComponent];
 const sharedModules: any[] = [];
@@ -22,7 +30,11 @@ const externalModules: any[] = [
   TranslateModule,
   MatMenuModule,
   MatButtonModule,
-  MatIconModule
+  MatIconModule,
+  MatDialogModule,
+  MatSnackBarModule,
+  IgxDatePickerModule,
+  IgxTimePickerModule
 ];
 
 
@@ -32,6 +44,6 @@ const externalModules: any[] = [
   imports: [
     ...sharedModules,
     ...externalModules
-  ]
+  ],
 })
 export class SharedModule { }
