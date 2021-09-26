@@ -20,7 +20,7 @@
   </div>
 
   <div class="dialog-actions-container">
-    <button mat-raised-button (click)='data ? update() : create()'>{{ data ? 'DIALOGS.UPDATE' : 'DIALOGS.CREATE' | translate}}</button>
+    <button mat-raised-button (click)='data?.data ? update() : create()'>{{ data?.data ? ('DIALOGS.UPDATE' | translate) : 'DIALOGS.CREATE' | translate}}</button>
   </div>
 
 </div>

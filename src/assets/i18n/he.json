@@ -32,8 +32,13 @@
     "MEASURE": "מדידה",
     "CREATE": "יצירה",
     "UPDATE": "עדכון",
+    "CONFIRM": "אישור",
+    "CANCEL": "ביטול",
     "MESSAGES": {
-      "SUCCESS": "שינוי נקלט בהצלחה"
+      "SUCCESS": "שינוי נקלט בהצלחה",
+      "DELETE": "האם למחוק רשומה?",
+      "ADD_READING": "הוסיפי מדד סוכר",
+      "UPDATE_READING": "עדכון מדד סוכר"
     }
   },
   "EMPTY_PAGE": {

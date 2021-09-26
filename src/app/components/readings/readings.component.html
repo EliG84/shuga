@@ -1,10 +1,10 @@
-<div class="readings-container" *ngIf='readings$ | async as readings; else noReadings'>
-  <div class="reading" *ngFor='let reading of readings'>
-    <span class="edit"><mat-icon>edit</mat-icon></span>
+<div class="readings-container" *ngIf='readings; else noReadings'>
+  <div class="reading" *ngFor='let reading of readings; trackBy:identify'>
+    <span class="edit" (click)='update(reading)'><mat-icon>edit</mat-icon></span>
     <span>{{reading.date | date : 'dd/MM/YY' }}</span>
     <span>{{reading.time | date : 'hh:mm' }}</span>
     <span>{{reading.result}}</span>
-    <span class="delete"><mat-icon>delete_outline</mat-icon></span>
+    <span class="delete" (click)='delete(reading._id!)'><mat-icon>delete_outline</mat-icon></span>
   </div>
 </div>
 

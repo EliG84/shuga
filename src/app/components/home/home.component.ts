@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { AppRoutingPath, RoutingPath } from 'src/app/models/routing.models';
+import { eDialogComponentType } from 'src/app/shared/general-consts';
+import { DialogService } from 'src/app/shared/services/dialog.service';
 import { SnackbarService } from 'src/app/shared/services/snackbar.service';
 import { SugarReadingDialogComponent } from '../dialogs/sugar-reading-dialog/sugar-reading-dialog.component';
 
@@ -40,30 +42,18 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router,
               private authService: AuthService,
-              private dialog: MatDialog,
-              private snackBar: SnackbarService) { }
+              private dialogService: DialogService) { }
 
   ngOnInit(): void {
   }
 
   openScackbar(): void {
-    const dialogRef = this.dialog?.open(
-      SugarReadingDialogComponent,
-      {
-       data: null,
-       width: '90%',
-       height: '50%'
-      }
-    );
-    dialogRef.afterClosed().pipe(first())
-    .subscribe((reply: {success: boolean, message: string}) => {
-      if (!reply) return;
-      if (reply?.success) {
-        this.snackBar?.success(reply?.message);
-      } else {
-        this.snackBar?.error(reply?.message);
-      }
-    })
+    this.dialogService.openDialog({
+      data: null,
+      componentType: eDialogComponentType.SUGAR_READING,
+      header: 'DIALOGS.MESSAGES.ADD_READING',
+      height: '50%'
+    });
   }
 
 }

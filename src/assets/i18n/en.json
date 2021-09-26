@@ -32,8 +32,13 @@
     "MEASURE": "Measurement",
     "CREATE": "Create",
     "UPDATE": "Update",
+    "CONFIRM": "Cofirm",
+    "CANCEL": "Cancel",
     "MESSAGES": {
-      "SUCCESS": "Completed successfuly"
+      "SUCCESS": "Completed successfuly",
+      "DELETE": "Are you sure?",
+      "ADD_READING": "Add Sugar measurement",
+      "UPDATE_READING": "Update measurement"
     }
   },
   "EMPTY_PAGE": {

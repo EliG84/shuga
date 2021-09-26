@@ -20,7 +20,7 @@ export class SugarReadingsService {
   }
 
   updateReading(body: ISugarReading): Observable<ISugarReading> {
-    return this.httpService.put(`${SUGAR_READINGS_API.BASE}/${SUGAR_READINGS_API.UPDATE}/${body._id}`);
+    return this.httpService.put(`${SUGAR_READINGS_API.BASE}/${SUGAR_READINGS_API.UPDATE}/${body._id}`, body);
   }
 
   deleteReading(id: string): Observable<any> {

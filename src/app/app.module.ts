@@ -11,6 +11,7 @@ import { SharedModule } from './shared/shared.module';
 import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './core/services/auth.interceptor';
 import { SugarReadingDialogComponent } from './components/dialogs/sugar-reading-dialog/sugar-reading-dialog.component';
+import { ConfirmationComponent } from './components/dialogs/confirmation/confirmation.component';
 
 registerLocaleData(localeIl);
 
@@ -20,7 +21,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 }
 
 @NgModule({
-  declarations: [AppComponent, SugarReadingDialogComponent],
+  declarations: [AppComponent, SugarReadingDialogComponent, ConfirmationComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
