@@ -13,7 +13,3 @@ export const AppRoutingPath = {
   GRAPHS: 'graphs',
   MORNING_READINGS: 'morning-measurements'
 }
-
-export const MealsRoutingPath = {
-  MEALS_LIST: 'list',
-}

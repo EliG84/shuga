@@ -23,6 +23,16 @@
     "GRAPHS": "מעבר לגרפים",
     "LOG_OUT": "התנתקי"
   },
+  "MEALS": {
+    "ADD_MEAL": "הוסיפי ארוחה",
+    "TYPES": {
+      "MEAL_TYPE": "סוג הארוחה",
+      "BREAKFAST": "בוקר",
+      "LAUNCH": "צהריים",
+      "DINNER": "ערב",
+      "INTERMEDIATE": "ביניים"
+    }
+  },
   "SNACKBAR": {
     "CLOSE": "סגור"
   },
@@ -34,11 +44,20 @@
     "UPDATE": "עדכון",
     "CONFIRM": "אישור",
     "CANCEL": "ביטול",
+    "ADD": "הוסיפי",
     "MESSAGES": {
       "SUCCESS": "שינוי נקלט בהצלחה",
       "DELETE": "האם למחוק רשומה?",
       "ADD_READING": "הוסיפי מדד סוכר",
-      "UPDATE_READING": "עדכון מדד סוכר"
+      "UPDATE_READING": "עדכון מדד סוכר",
+      "ADD_DAY": "הוסיפי יום חדש",
+      "ADD_MEAL": "הוספת ארוחה",
+      "EDIT_MEAL": "עדכון ארוחה",
+      "THE_INGRIDIENTS": "מרכיבים",
+      "INGRIDEINT_NAME": "שם המרכיב",
+      "INGRIDEINT_AMOUNT": "כמות",
+      "CURRENT_READING": "מדד סוכר",
+      "THE_RESULT": "המדד"
     }
   },
   "EMPTY_PAGE": {

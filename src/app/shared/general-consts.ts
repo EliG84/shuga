@@ -9,13 +9,15 @@ export const dataAttributeKeys = {
 
 export enum ePageRefresh {
   READINGS = 1,
+  DAYS,
   MEALS
 }
 
 export enum eDialogComponentType {
   SUGAR_READING = 1,
   MEAL,
-  CONFIRMATION
+  CONFIRMATION,
+  ADD_DAY
 }
 
 export enum eDialogStatus {

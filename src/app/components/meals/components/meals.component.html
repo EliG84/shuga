@@ -1,0 +1,22 @@
+<div class="days-container" *ngIf='days.length; else noDays'>
+  <app-day *ngFor='let day of days; trackBy:identify'
+           [date]='day.date'
+           [meals]='day.meals'
+           [dayId]='day._id'>
+  </app-day>
+  <button class="add-day-button"
+          (click)='addDay()'>
+    <mat-icon>add_circle_outline</mat-icon>
+  </button>
+</div>
+
+<ng-template #noDays>
+  <div class="days-container days-container--empty">
+    <h3>{{'EMPTY_PAGE.GENERIC_EMPTY' | translate}}</h3>
+  </div>
+  <button class="add-day-button"
+          (click)='addDay()'>
+    <mat-icon>add_circle_outline</mat-icon>
+  </button>
+</ng-template>
+

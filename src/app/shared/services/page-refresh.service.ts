@@ -7,6 +7,7 @@ import { Subject } from 'rxjs';
 export class PageRefreshService {
 
   refresh$ = new Subject<number>();
+  refreshMeal$ = new Subject<string>();
 
   constructor() { }
 }

@@ -14,6 +14,21 @@ export const SUGAR_READINGS_API = {
   CREATE: 'create',
   UPDATE: 'update',
   DELETE: 'delete',
+}
 
+export const DAY_API = {
+  BASE: 'day',
+  READ_ALL: 'read/all',
+  CREATE: 'create',
+  DELETE: 'delete',
+}
 
+export const MEAL_API = {
+  BASE: 'meal',
+  READ_ALL: 'read/all',
+  READ_ONE: 'read',
+  CREATE: 'create',
+  UPDATE: 'update',
+  DELETE: 'delete',
+  UPLOAD_IMAGE: 'upload/image'
 }

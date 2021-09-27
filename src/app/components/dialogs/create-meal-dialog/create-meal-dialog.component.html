@@ -1,0 +1,67 @@
+<div class="dialog-container">
+  <div class="dialog-actions-top">
+    <mat-icon class="close-dialog" (click)='closeDialog()'>close</mat-icon>
+  </div>
+  <div class="header-container">
+    <h4>{{data?.header! | translate}}</h4>
+    <div class="meal-type-container">
+      <label for="type-select">{{'MEALS.TYPES.MEAL_TYPE' | translate}}: </label>
+      <select id="type-select" [formControl]='mealTypeFormControl'>
+        <option *ngFor="let type of mealTypes" [value]="type.type">{{type.name | translate}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="dialog-content">
+    <div class="meal-date-time-container">
+      <igx-time-picker class="time-picker-container" [(ngModel)]='date'>
+        <label igxLabel>{{'DIALOGS.TIME' | translate}}</label>
+      </igx-time-picker>
+    </div>
+      <ng-container [formGroup]='newIngridientForm'>
+        <h5>{{'DIALOGS.MESSAGES.THE_INGRIDIENTS' | translate}}</h5>
+        <div class="ingridient-form-container">
+          <div class="ingridient-name-container">
+            <label for="ingrident-name">{{'DIALOGS.MESSAGES.INGRIDEINT_NAME' | translate}}: </label>
+            <input formControlName='name' type="text" id="ingridient-name">
+          </div>
+        </div>
+        <div class="ingridient-amount-container">
+          <label for="ingridient-amount">{{'DIALOGS.MESSAGES.INGRIDEINT_AMOUNT' | translate}}: </label>
+          <input formControlName='quantity' type="number" min="1" id="ingridient-amount">
+          <button [disabled]='newIngridientForm.invalid'
+                  mat-raised-button color='primary'
+                  (click)='addIngrideint()'>{{'DIALOGS.ADD' | translate}}</button>
+        </div>
+      </ng-container>
+      <div class="ingridient-view-container">
+        <div class="ingridient" *ngFor='let ing of ingridients; let i = index'>
+          <mat-icon (click)='removeIngridient(i)' class="ingridient-delete">delete_forever</mat-icon>
+          <span class="ingrident-name">{{ing.name}}</span>
+          <span class="ingridient-amount">{{ing.quantity}}</span>
+        </div>
+      </div>
+  </div>
+  <div class="dialog-actions">
+    <div class="image-and-reading-container">
+      <div class="reading-container">
+        <h5>{{'DIALOGS.MESSAGES.CURRENT_READING' | translate}}</h5>
+        <igx-time-picker class="time-picker-container" [(ngModel)]='sugarReadingTime'>
+          <label igxLabel>{{'DIALOGS.TIME' | translate}}</label>
+        </igx-time-picker>
+        <label for="sugar-reading-resular">{{'DIALOGS.MESSAGES.THE_RESULT' | translate}}: </label>
+        <input type="number" min="0" max="200" id="sugar-reading-resular" [(ngModel)]='sugarReading ? sugarReading.result : sugarReadingResult'>
+      </div>
+      <div class="image-container" (click)='fileUpload.click()'>
+        <input #fileUpload
+               type="file"
+               accept="image/*"
+               capture="environment"
+               class="display-none"
+               (change)="changeImage($event.target)">
+        <mat-icon class="camera-icon">camera_enhance</mat-icon>
+      </div>
+    </div>
+    <button mat-raised-button color="primary" (click)='data.data ? update() : create()' [disabled]='mealTypeFormControl.invalid'>{{'DIALOGS.CONFIRM' | translate}}</button>
+    <button mat-raised-button class="cancel-button" (click)='closeDialog()'>{{'DIALOGS.CANCEL' | translate}}</button>
+  </div>
+</div>

@@ -2,6 +2,8 @@ import { eDialogComponentType, eDialogStatus, ePageRefresh } from "./general-con
 
 export interface IDialogPayload<T> {
   data?: T;
+  dayId?: string;
+  date?: Date;
   source?: ePageRefresh;
   componentType: eDialogComponentType;
   height: string;

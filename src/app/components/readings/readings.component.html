@@ -1,4 +1,4 @@
-<div class="readings-container" *ngIf='readings; else noReadings'>
+<div class="readings-container" *ngIf='readings.length; else noReadings'>
   <div class="reading" *ngFor='let reading of readings; trackBy:identify'>
     <span class="edit" (click)='update(reading)'><mat-icon>edit</mat-icon></span>
     <span>{{reading.date | date : 'dd/MM/YY' }}</span>

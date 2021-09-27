@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { MealsRoutingModule } from './meals-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { MealsListComponent } from './components/meals-list/meals-list.component';
+import { MealsComponent } from './components/meals.component';
+import { MealComponent } from './components/meal/meal.component';
+import { DayComponent } from './components/day/day.component';
 
 
 @NgModule({
-  declarations: [MealsListComponent],
-  exports: [MealsListComponent],
+  declarations: [MealsComponent, MealComponent, DayComponent],
+  exports: [MealsComponent, MealComponent, DayComponent],
   imports: [
     CommonModule,
     MealsRoutingModule,

@@ -1,0 +1,99 @@
+::ng-deep {
+  .cdk-overlay-pane {
+    max-width: 100vw !important;
+  }
+}
+
+.dialog-container {
+  direction: rtl;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dialog-actions-top {
+  min-height: 30px;
+}
+
+.header-container {
+  margin-bottom: 2rem;
+}
+
+.meal-type-container {
+  select {
+    height: 2rem;
+    width: 10rem;
+  }
+}
+
+.dialog-content {
+  flex: 1;
+  overflow: auto;
+}
+
+.ingridient-form-container {
+  input {
+    height: 2rem;
+  }
+  > * {
+    margin-bottom: 1rem;
+  }
+}
+
+.ingridient-amount-container {
+  input {
+    height: 2rem;
+  }
+  input[type='number'] {
+    width: 4rem;
+  }
+  > * {
+    margin-left: 1rem;
+  }
+}
+
+.ingridient-view-container {
+  > * {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2rem;
+  }
+}
+
+.image-and-reading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reading-container {
+  flex: 1;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bullet-graph-backing-brush);
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+
+  mat-icon {
+    font: 2rem;
+  }
+}
+
+
+.dialog-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  > * {
+    margin: 1rem 0;
+  }
+}

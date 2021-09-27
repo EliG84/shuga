@@ -1,0 +1,18 @@
+<div class="dialog-container">
+  <mat-icon class="close-dialog" (click)='closeDialog()'>close</mat-icon>
+  <div class="dialog-header-container">
+    <h4>{{data?.header! | translate}}</h4>
+  </div>
+  <div class="dialog-content">
+    <igx-date-picker class="date-picker-container"
+                     #datePicker
+                     [(ngModel)]='date'>
+      <label igxLabel>{{'DIALOGS.DATE' | translate}}</label>
+    </igx-date-picker>
+  </div>
+
+  <div class="dialog-actions">
+    <button mat-raised-button color="primary" (click)='save()'>{{'DIALOGS.CREATE' | translate}}</button>
+    <button mat-raised-button class="cancel-button" (click)='closeDialog()'>{{'DIALOGS.CANCEL' | translate}}</button>
+  </div>
+</div>

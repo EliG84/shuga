@@ -1,0 +1,13 @@
+.dialog-container {
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  justify-content: s;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: space-around;
+}

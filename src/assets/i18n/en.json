@@ -23,6 +23,16 @@
     "GRAPHS": "View graphs",
     "LOG_OUT": "Logout"
   },
+  "MEALS": {
+    "ADD_MEAL": "Add a meal",
+    "TYPES": {
+      "MEAL_TYPE": "Meal type",
+      "BREAKFAST": "Breakfast",
+      "LAUNCH": "Launch",
+      "DINNER": "Dinner",
+      "INTERMEDIATE": "Intermediate"
+    }
+  },
   "SNACKBAR": {
     "CLOSE": "Close"
   },
@@ -34,11 +44,20 @@
     "UPDATE": "Update",
     "CONFIRM": "Cofirm",
     "CANCEL": "Cancel",
+    "ADD": "Add",
     "MESSAGES": {
       "SUCCESS": "Completed successfuly",
       "DELETE": "Are you sure?",
       "ADD_READING": "Add Sugar measurement",
-      "UPDATE_READING": "Update measurement"
+      "UPDATE_READING": "Update measurement",
+      "ADD_DAY": "Add a new Day",
+      "ADD_MEAL": "Add meal",
+      "EDIT_MEAL": "Update meal",
+      "THE_INGRIDIENTS": "המרכיבים",
+      "INGRIDEINT_NAME": "Ingridient name",
+      "INGRIDEINT_AMOUNT": "Amount",
+      "CURRENT_READING": "Sugar measurement",
+      "THE_RESULT": "Result"
     }
   },
   "EMPTY_PAGE": {

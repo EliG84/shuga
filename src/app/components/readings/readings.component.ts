@@ -50,7 +50,7 @@ export class ReadingsComponent implements OnInit, OnDestroy, DoCheck {
     this.cd.markForCheck();
   }
 
-  identify(index: number, item: ISugarReading){
+  identify(index: number, item: ISugarReading): number {
     return item.time;
  }
 

@@ -1,0 +1,33 @@
+:host {
+  height: calc(100vh - var(--app-header-height));
+}
+
+.days-container {
+  height: calc(100vh - var(--app-header-height));
+  width: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+
+  .add-day-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    border: none;
+    background: var(--blue-2);
+    color: white;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: dashed 3px;
+    box-shadow: 2px 4px 4px rgb(0 0 0 / 50%);
+
+    mat-icon {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
