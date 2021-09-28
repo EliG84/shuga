@@ -3,6 +3,7 @@ import { eDialogComponentType, eDialogStatus, ePageRefresh } from "./general-con
 export interface IDialogPayload<T> {
   data?: T;
   dayId?: string;
+  mealId?: string;
   date?: Date;
   source?: ePageRefresh;
   componentType: eDialogComponentType;
@@ -13,4 +14,6 @@ export interface IDialogPayload<T> {
 export interface IDialogResponse {
   source?: ePageRefresh;
   status: eDialogStatus;
+  mealId?: string;
+  dayId?: string;
 }

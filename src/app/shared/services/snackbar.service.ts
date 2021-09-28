@@ -19,7 +19,7 @@ export class SnackbarService {
     return this.snackbar.open(this.tranlsate.instant(message),
                               this.tranlsate.instant(this.closeActionText), {
       panelClass: ['snackbar-error'],
-      duration: 3000,
+      duration: 5000,
       direction: 'rtl',
       verticalPosition: 'top',
     });
@@ -29,7 +29,7 @@ export class SnackbarService {
     return this.snackbar.open(this.tranlsate.instant(message),
                               this.tranlsate.instant(this.closeActionText), {
       panelClass: ['snackbar-success'],
-      duration: 3000,
+      duration: 5000,
       direction: 'rtl',
       verticalPosition: 'top',
     });

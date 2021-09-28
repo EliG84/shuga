@@ -46,3 +46,7 @@ export interface IMealRequest {
   reading?: string;
   name?: string;
 }
+
+export interface IMealDeleteRequest {
+  dayId: string;
+}

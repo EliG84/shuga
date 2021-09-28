@@ -1,8 +1,10 @@
 <div class="dialog-container">
 
-  <div class="dialog-header-container">
+  <div class="dialog-actions-top-container">
     <mat-icon (click)='closeDialog()'>close</mat-icon>
   </div>
+
+  <h6 *ngIf='header'>{{header | translate}}</h6>
 
   <div class="dialog-content-container">
     <igx-date-picker class="date-picker-container" #datePicker [(ngModel)]='date'>
@@ -20,7 +22,7 @@
   </div>
 
   <div class="dialog-actions-container">
-    <button mat-raised-button (click)='data?.data ? update() : create()'>{{ data?.data ? ('DIALOGS.UPDATE' | translate) : 'DIALOGS.CREATE' | translate}}</button>
+    <button mat-raised-button (click)='data?.data?._id ? update() : create()'>{{ data?.data?._id ? ('DIALOGS.UPDATE' | translate) : 'DIALOGS.CREATE' | translate}}</button>
   </div>
 
 </div>

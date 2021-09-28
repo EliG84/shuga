@@ -1,7 +1,9 @@
 <div class="day-container">
   <span class="date-span">{{date | date : 'dd/MM/YYYY'}}</span>
   <div class="day-horizontal-scroll-container">
-    <app-meal *ngFor='let meal of meals' [mealId]='meal'></app-meal>
+    <app-meal *ngFor='let meal of meals'
+              [mealId]='meal'
+              (deleted)="removeMeal($event)"></app-meal>
     <div class='meal-add-container'>
       <div class="meal-add-content">
         <h4>{{'MEALS.ADD_MEAL' | translate}}</h4>

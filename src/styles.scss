@@ -122,3 +122,12 @@ app-header {
 
 @include igx-core();
 @include igx-theme($default-palette);
+
+mat-icon {
+  cursor: pointer;
+}
+
+input, select {
+  border: none;
+  border-bottom: 1px solid var(--blue-2);
+}

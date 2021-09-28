@@ -11,12 +11,14 @@ import { LocalStorageService } from 'src/app/shared/services/local-storage.servi
 import { localStorageKeys } from 'src/app/shared/general-consts';
 import { catchError } from 'rxjs/operators';
 import { AuthService } from './auth.service';
+import { SnackbarService } from 'src/app/shared/services/snackbar.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
   constructor(private localStorage: LocalStorageService,
-              private authService: AuthService) {}
+              private authService: AuthService,
+              private snackbar: SnackbarService) {}
 
   addToken(req: HttpRequest<any>, token: string): HttpRequest<any> {
     return req.clone({ setHeaders: { Authorization: token } });
@@ -32,6 +34,8 @@ export class AuthInterceptor implements HttpInterceptor {
             case 401:
             case 403:
               return this.handle401Error(request, next, error);
+            case 400:
+              return this.handle400Error(error);
             default:
               return throwError(error);
           }
@@ -46,4 +50,9 @@ export class AuthInterceptor implements HttpInterceptor {
     this.authService.logout();
     return throwError({error, status: 403});
   }
+
+  handle400Error(error: HttpErrorResponse): any {
+    this.snackbar.error(error.error.message);
+    return throwError({error, status: 400});
+  };
 }

@@ -18,9 +18,10 @@ import {
 	IgxDatePickerModule,
 	IgxTimePickerModule
  } from "igniteui-angular";
+import { ShareDirectiveModule } from './share-directive.module';
 
 const classes: any[] = [HeaderComponent];
-const sharedModules: any[] = [];
+const sharedModules: any[] = [ShareDirectiveModule];
 const externalModules: any[] = [
   FormsModule,
   ReactiveFormsModule,

@@ -43,15 +43,15 @@
   </div>
   <div class="dialog-actions">
     <div class="image-and-reading-container">
-      <div class="reading-container">
+      <!-- <div class="reading-container">
         <h5>{{'DIALOGS.MESSAGES.CURRENT_READING' | translate}}</h5>
         <igx-time-picker class="time-picker-container" [(ngModel)]='sugarReadingTime'>
           <label igxLabel>{{'DIALOGS.TIME' | translate}}</label>
         </igx-time-picker>
         <label for="sugar-reading-resular">{{'DIALOGS.MESSAGES.THE_RESULT' | translate}}: </label>
         <input type="number" min="0" max="200" id="sugar-reading-resular" [(ngModel)]='sugarReading ? sugarReading.result : sugarReadingResult'>
-      </div>
-      <div class="image-container" (click)='fileUpload.click()'>
+      </div> -->
+      <div class="image-container" [ngClass]='{"image-container--loaded": formData.has("mealImage")}' (click)='fileUpload.click()'>
         <input #fileUpload
                type="file"
                accept="image/*"
@@ -61,7 +61,7 @@
         <mat-icon class="camera-icon">camera_enhance</mat-icon>
       </div>
     </div>
-    <button mat-raised-button color="primary" (click)='data.data ? update() : create()' [disabled]='mealTypeFormControl.invalid'>{{'DIALOGS.CONFIRM' | translate}}</button>
+    <button mat-raised-button color="primary" (click)='save()' [disabled]='mealTypeFormControl.invalid'>{{'DIALOGS.CONFIRM' | translate}}</button>
     <button mat-raised-button class="cancel-button" (click)='closeDialog()'>{{'DIALOGS.CANCEL' | translate}}</button>
   </div>
 </div>

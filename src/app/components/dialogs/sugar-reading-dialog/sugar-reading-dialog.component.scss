@@ -8,7 +8,7 @@
   }
 }
 
-.dialog-header-container,
+.dialog-header-top-container,
 .dialog-actions-container {
   height: 5%;
 
@@ -16,6 +16,10 @@
     width: 100%;
     text-align: center;
   }
+}
+
+.dialog-header-top-container {
+  margin-bottom: 1rem;
 }
 
 .measure-input-container input {

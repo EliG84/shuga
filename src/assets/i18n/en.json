@@ -25,6 +25,10 @@
   },
   "MEALS": {
     "ADD_MEAL": "Add a meal",
+    "EDIT_MEAL": "Edit this meal",
+    "ADD_DAY": "Press the button to add new day",
+    "ADD_MEAL_SUGAR_READING": "Add sugar measurement for this meal",
+    "MEAL_SUGAR_READING": "Sugar measurement for this meal",
     "TYPES": {
       "MEAL_TYPE": "Meal type",
       "BREAKFAST": "Breakfast",

@@ -48,4 +48,8 @@ export class DayComponent implements DoCheck {
     })
   }
 
+  removeMeal(event: string): void {
+    this.meals = this.meals?.filter((m) => m !== event);
+  }
+
 }

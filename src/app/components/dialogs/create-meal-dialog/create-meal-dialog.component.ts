@@ -6,8 +6,8 @@ import { switchMap } from 'rxjs/operators';
 import { MealsService } from 'src/app/shared/api-services/meals.service';
 import { SugarReadingsService } from 'src/app/shared/api-services/sugar-readings.service';
 import { IIngridient, IMealRequest, IMealResponse, ISugarReading } from 'src/app/shared/api.models';
-import { eDialogStatus } from 'src/app/shared/general-consts';
-import { IDialogPayload } from 'src/app/shared/shared.interfaces';
+import { eDialogStatus, eMealTypes } from 'src/app/shared/general-consts';
+import { IDialogPayload, IDialogResponse } from 'src/app/shared/shared.interfaces';
 
 @Component({
   selector: 'app-create-meal-dialog',
@@ -23,30 +23,27 @@ export class CreateMealDialogComponent implements OnInit {
   mealTypes = [
     {
     name: 'MEALS.TYPES.BREAKFAST',
-    type: 1
+    type: eMealTypes.BREAKFAST
     },
     {
     name: 'MEALS.TYPES.LAUNCH',
-    type: 2
+    type: eMealTypes.LAUNCH
     },
     {
     name: 'MEALS.TYPES.DINNER',
-    type: 3
+    type: eMealTypes.DINNER
     },
     {
     name: 'MEALS.TYPES.INTERMEDIATE',
-    type: 4
+    type: eMealTypes.INTERMEDIATE
     }
   ]
   formData = new FormData();
-  sugarReading: ISugarReading | undefined;
-  sugarReadingTime = new Date();
-  sugarReadingResult = 0;
   newIngridientForm = new FormGroup({
     name: new FormControl(null,Validators.required),
     quantity: new FormControl(null,[Validators.min(1),Validators.max(20),Validators.required])
   });
-  newlySaveMeal: string | undefined;
+  newMealId: string | undefined;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: IDialogPayload<IMealResponse | null>,
               private dialogRef: MatDialogRef<CreateMealDialogComponent>,
@@ -58,52 +55,55 @@ export class CreateMealDialogComponent implements OnInit {
       this.ingridients = this.data.data.ingridients;
       this.date = new Date(this.data.data.date);
       this.mealTypeFormControl.patchValue(this.data.data.type);
-      if (this.data.data.reading) {
-        this.sugarReading = this.data.data.reading;
-        this.sugarReadingTime = new Date(this.data.data.reading.time);
-        this.sugarReadingResult = this.data.data.reading.result;
-      }
-
     }
   }
 
-  create(): void {
+  save(): void {
     const newMealRequest: IMealRequest = {
       dayId: this.data.dayId!,
       type: this.mealTypeFormControl.value,
       date: this.date,
       time: this.getTime(this.date),
-      ingridients: [...this.ingridients],
+      ingridients: [...this.ingridients]
     }
-    this.mealService.createMeal(newMealRequest)
+    if (this.data.data) {
+      this.update(newMealRequest);
+    } else {
+      this.create(newMealRequest);
+    }
+  }
+
+  create(meal: IMealRequest): void {
+  this.mealService.createMeal(meal)
     .pipe(
-      switchMap((meal) => {
-        this.newlySaveMeal = meal._id;
-        if (this.sugarReadingResult > 50) {
-          const sugarReading: ISugarReading = {
-            mealId: meal._id,
-            date: this.sugarReadingTime,
-            time: this.getTime(this.sugarReadingTime),
-            result: this.sugarReadingResult,
-            isMorningReading: false
-          }
-          return this.sugarReadingService.createReading(sugarReading);
-        }
-        return of(null);
-      }),
-      switchMap(() => {
+      switchMap((res) => {
+        this.newMealId = res._id
         if (this.formData.has('mealImage')) {
-          return this.mealService.uploadImage(this.formData,this.newlySaveMeal!);
+          return this.mealService.uploadImage(this.formData,res._id);
         }
         return of(null);
       })
     ).subscribe(() => {
-      this.dialogRef.close({status: eDialogStatus.CLOSE_OK, mealId: this.newlySaveMeal});
+      this.dialogRef.close({status: eDialogStatus.CLOSE_OK, mealId: this.newMealId});
     })
   }
 
-  update(): void {
-
+  update(meal: IMealRequest): void {
+    this.mealService.updateMeal(meal,this.data.data?._id!)
+    .pipe(
+      switchMap((res) => {
+        if (this.formData.has('mealImage')) {
+          return this.mealService.uploadImage(this.formData, res._id)
+        }
+        return of(null)
+      })
+    ).subscribe(() => {
+        this.dialogRef.close({
+          source: this.data.source,
+          mealId: this.data.data?._id,
+          status: eDialogStatus.CLOSE_OK
+        } as IDialogResponse)
+    });
   }
 
   addIngrideint(): void {

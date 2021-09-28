@@ -17,7 +17,8 @@ export enum eDialogComponentType {
   SUGAR_READING = 1,
   MEAL,
   CONFIRMATION,
-  ADD_DAY
+  ADD_DAY,
+  ADD_MEAL
 }
 
 export enum eDialogStatus {
@@ -25,4 +26,15 @@ export enum eDialogStatus {
   DISMISS, // dialog status is closed without taken action => cancel
   CLOSE_OK, // Close with success
   CLOSE_ERROR, // close with an error
+}
+
+export const dialogHeights = {
+  SUGAR_READING: '50%',
+}
+
+export enum eMealTypes {
+  BREAKFAST = 1,
+  LAUNCH,
+  DINNER,
+  INTERMEDIATE
 }

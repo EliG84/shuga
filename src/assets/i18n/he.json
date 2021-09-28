@@ -25,12 +25,16 @@
   },
   "MEALS": {
     "ADD_MEAL": "הוסיפי ארוחה",
+    "EDIT_MEAL": "עדכון פרטי ארוחה",
+    "ADD_DAY": "לחצי על הכפתור כדי להוסיף יום",
+    "ADD_MEAL_SUGAR_READING": "הוסיפי מדד סוכר לארוחה זו",
+    "MEAL_SUGAR_READING": "מדד הסוכר לארוחה זו",
     "TYPES": {
       "MEAL_TYPE": "סוג הארוחה",
-      "BREAKFAST": "בוקר",
-      "LAUNCH": "צהריים",
-      "DINNER": "ערב",
-      "INTERMEDIATE": "ביניים"
+      "BREAKFAST": "ארוחת בוקר",
+      "LAUNCH": "ארוחת צהריים",
+      "DINNER": "ארוחת ערב",
+      "INTERMEDIATE": "ארוחת ביניים"
     }
   },
   "SNACKBAR": {
