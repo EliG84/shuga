@@ -4,11 +4,13 @@
     <h4>{{data?.header! | translate}}</h4>
   </div>
   <div class="dialog-content">
-    <igx-date-picker class="date-picker-container"
-                     #datePicker
-                     [(ngModel)]='date'>
-      <label igxLabel>{{'DIALOGS.DATE' | translate}}</label>
-    </igx-date-picker>
+    <label >{{'DIALOGS.DATE' | translate}}</label>
+    <p (click)='datePicker.openDialog()'><mat-icon>edit</mat-icon>{{date | date : 'dd/MM/YYYY'}}</p>
+      <div class="display-none">
+        <igx-date-picker #datePicker
+                         [(ngModel)]='date'>
+        </igx-date-picker>
+      </div>
   </div>
 
   <div class="dialog-actions">

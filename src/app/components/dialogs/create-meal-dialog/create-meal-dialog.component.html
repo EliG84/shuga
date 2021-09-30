@@ -13,26 +13,30 @@
   </div>
   <div class="dialog-content">
     <div class="meal-date-time-container">
-      <igx-time-picker class="time-picker-container" [(ngModel)]='date'>
-        <label igxLabel>{{'DIALOGS.TIME' | translate}}</label>
-      </igx-time-picker>
+      <p id="time" (click)='timePicker.openDialog()'><mat-icon>watch_later</mat-icon>{{date | date: 'HH:mm'}}</p>
+      <div class="display-none">
+        <igx-time-picker #timePicker
+                         class="time-picker-container"
+                         [(ngModel)]='date'>
+        </igx-time-picker>
+      </div>
     </div>
-      <ng-container [formGroup]='newIngridientForm'>
+      <div class="form-container" [formGroup]='newIngridientForm'>
         <h5>{{'DIALOGS.MESSAGES.THE_INGRIDIENTS' | translate}}</h5>
-        <div class="ingridient-form-container">
-          <div class="ingridient-name-container">
-            <label for="ingrident-name">{{'DIALOGS.MESSAGES.INGRIDEINT_NAME' | translate}}: </label>
-            <input formControlName='name' type="text" id="ingridient-name">
-          </div>
+        <div class="ingridient-name-container">
+          <label for="ingrident-name">{{'DIALOGS.MESSAGES.INGRIDEINT_NAME' | translate}}: </label>
+          <input formControlName='name' type="text" id="ingridient-name">
         </div>
         <div class="ingridient-amount-container">
           <label for="ingridient-amount">{{'DIALOGS.MESSAGES.INGRIDEINT_AMOUNT' | translate}}: </label>
           <input formControlName='quantity' type="number" min="1" id="ingridient-amount">
-          <button [disabled]='newIngridientForm.invalid'
-                  mat-raised-button color='primary'
-                  (click)='addIngrideint()'>{{'DIALOGS.ADD' | translate}}</button>
         </div>
-      </ng-container>
+        <button class="form-submit-button"
+                [disabled]='newIngridientForm.invalid'
+                mat-raised-button color='primary'
+                (click)='addIngrideint()'>{{'DIALOGS.ADD' | translate}}
+        </button>
+      </div>
       <div class="ingridient-view-container">
         <div class="ingridient" *ngFor='let ing of ingridients; let i = index'>
           <mat-icon (click)='removeIngridient(i)' class="ingridient-delete">delete_forever</mat-icon>
@@ -43,14 +47,6 @@
   </div>
   <div class="dialog-actions">
     <div class="image-and-reading-container">
-      <!-- <div class="reading-container">
-        <h5>{{'DIALOGS.MESSAGES.CURRENT_READING' | translate}}</h5>
-        <igx-time-picker class="time-picker-container" [(ngModel)]='sugarReadingTime'>
-          <label igxLabel>{{'DIALOGS.TIME' | translate}}</label>
-        </igx-time-picker>
-        <label for="sugar-reading-resular">{{'DIALOGS.MESSAGES.THE_RESULT' | translate}}: </label>
-        <input type="number" min="0" max="200" id="sugar-reading-resular" [(ngModel)]='sugarReading ? sugarReading.result : sugarReadingResult'>
-      </div> -->
       <div class="image-container" [ngClass]='{"image-container--loaded": formData.has("mealImage")}' (click)='fileUpload.click()'>
         <input #fileUpload
                type="file"

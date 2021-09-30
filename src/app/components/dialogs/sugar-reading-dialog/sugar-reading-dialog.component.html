@@ -7,13 +7,18 @@
   <h6 *ngIf='header'>{{header | translate}}</h6>
 
   <div class="dialog-content-container">
-    <igx-date-picker class="date-picker-container" #datePicker [(ngModel)]='date'>
-      <label igxLabel>{{'DIALOGS.DATE' | translate}}</label>
-    </igx-date-picker>
 
-    <igx-time-picker class="time-picker-container" [(ngModel)]='date'>
-      <label igxLabel>{{'DIALOGS.TIME' | translate}}</label>
-    </igx-time-picker>
+    <p *ngIf='!data?.mealId' (click)='datePicker.openDialog()'><mat-icon>edit</mat-icon>{{date | date : 'dd/MM/YYYY'}}</p>
+    <p (click)='timePicker.openDialog()'><mat-icon>watch_later</mat-icon>{{date | date: 'HH:mm'}}</p>
+
+    <div class="display-none">
+      <igx-date-picker class="date-picker-container" #datePicker [(ngModel)]='date'>
+        <label igxLabel>{{'DIALOGS.DATE' | translate}}</label>
+      </igx-date-picker>
+      <igx-time-picker #timePicker class="time-picker-container" [(ngModel)]='date'>
+        <label igxLabel>{{'DIALOGS.TIME' | translate}}</label>
+      </igx-time-picker>
+    </div>
 
     <div class="measure-input-container">
       <label for="measure">{{'DIALOGS.MEASURE' | translate}}</label>
@@ -22,7 +27,7 @@
   </div>
 
   <div class="dialog-actions-container">
-    <button mat-raised-button (click)='data?.data?._id ? update() : create()'>{{ data?.data?._id ? ('DIALOGS.UPDATE' | translate) : 'DIALOGS.CREATE' | translate}}</button>
+    <button [disabled]='!result || result <= 0' mat-raised-button (click)='data?.data?._id ? update() : create()'>{{ data?.data?._id ? ('DIALOGS.UPDATE' | translate) : 'DIALOGS.CREATE' | translate}}</button>
   </div>
 
 </div>

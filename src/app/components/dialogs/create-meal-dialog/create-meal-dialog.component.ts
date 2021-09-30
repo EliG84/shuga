@@ -53,9 +53,9 @@ export class CreateMealDialogComponent implements OnInit {
   ngOnInit(): void {
     if (this.data.data) {
       this.ingridients = this.data.data.ingridients;
-      this.date = new Date(this.data.data.date);
       this.mealTypeFormControl.patchValue(this.data.data.type);
     }
+    this.date = new Date(this.data!.date!);
   }
 
   save(): void {

@@ -83,6 +83,8 @@ export class MealComponent implements OnInit, OnDestroy, DoCheck {
   }
 
   sugarReadingForMeal(): void {
+    console.log(this.meal?.time);
+    console.log(new Date(this.meal!.time));
     this.dialogService.openDialog({
       data: this.meal?.reading || null,
       mealId: this.meal?._id,

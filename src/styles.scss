@@ -2,6 +2,11 @@
 @import './colors.scss';
 @import './general-variables.scss';
 
+html {
+  display: flex;
+  justify-content: center;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -20,6 +25,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  max-width: 600px;
 }
 
 h1,

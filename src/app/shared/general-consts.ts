@@ -38,3 +38,20 @@ export enum eMealTypes {
   DINNER,
   INTERMEDIATE
 }
+
+
+export const snackBarOptions = {
+  PANEL_CLASS_SUCCESS: 'snackbar-info',
+  PANEL_CLASS_INFOR: 'snackbar-info',
+  PANEL_CLASS_ERROR: 'snackbar-error',
+  DURATION: 5000,
+  DIRECTION_RTL: 'rtl',
+  DIRECTION_LTR: 'ltr',
+  VERTICAL_POS_TOP: 'top',
+  VERTICAL_POS_BOTTOM: 'bottom',
+  HORIZONTAL_POS_START: 'start',
+  HORIZONTAL_POS_CENTER: 'center',
+  HORIZONTAL_POS_END: 'end',
+  HORIZONTAL_POS_LEFT: 'left',
+
+}

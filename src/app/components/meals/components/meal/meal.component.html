@@ -1,27 +1,32 @@
 <div class="meal-container">
-  <div class="meal-controls">
-    <mat-icon (click)='deleteMeal()'>delete</mat-icon>
-    <mat-icon (click)='updateMeal()'>edit</mat-icon>
-  </div>
-  <div class="meal-headers">
-    <h4>{{date | date : 'HH:mm'}}</h4>
-    <h4 *ngIf='mealType'>{{mealType | translate}}</h4>
+  <div class="controls-headers">
+    <div class="meal-controls">
+      <mat-icon class="delete" (click)='deleteMeal()'>delete</mat-icon>
+      <mat-icon class="edit" (click)='updateMeal()'>edit</mat-icon>
+    </div>
+    <div class="meal-headers">
+      <h4>{{date | date : 'HH:mm'}}</h4>
+      <h4 *ngIf='mealType'>{{mealType | translate}}</h4>
+    </div>
   </div>
   <div class="meal-ingridients">
-    <div *ngFor='let ing of meal?.ingridients'>
+    <div *ngFor='let ing of meal?.ingridients'
+         class='ingridient'>
       <span>{{ing.name}}</span>
       <span>{{ing.quantity}}</span>
     </div>
   </div>
-  <div class="meal-sugar-reading" *ngIf='!meal?.reading'>
+  <div class="meal-sugar-reading-new" *ngIf='!meal?.reading'>
     <h5>{{'MEALS.ADD_MEAL_SUGAR_READING' | translate}}</h5>
     <button *ngIf='!meal?.reading' (click)='sugarReadingForMeal()'><mat-icon>add</mat-icon></button>
   </div>
-  <div class="meal-sugar-reading" *ngIf='meal?.reading'>
+  <div class="meal-sugar-reading-existing" *ngIf='meal?.reading'>
     <h5>{{'MEALS.MEAL_SUGAR_READING' | translate}}</h5>
-    <span>{{meal?.reading?.time | json | date : 'HH:mm'}}</span>
-    <span>{{meal?.reading?.result}}</span>
-    <mat-icon (click)='sugarReadingForMeal()'>edit</mat-icon>
+    <div class="reading-container">
+      <span>{{meal?.reading?.time | json | date : 'HH:mm'}}</span>
+      <span>{{meal?.reading?.result}}</span>
+      <mat-icon (click)='sugarReadingForMeal()'>edit</mat-icon>
+    </div>
   </div>
   <img class="meal-image"
        [src]="meal?.image"

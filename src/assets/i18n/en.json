@@ -57,8 +57,8 @@
       "ADD_DAY": "Add a new Day",
       "ADD_MEAL": "Add meal",
       "EDIT_MEAL": "Update meal",
-      "THE_INGRIDIENTS": "המרכיבים",
-      "INGRIDEINT_NAME": "Ingridient name",
+      "THE_INGRIDIENTS": "Ingridients",
+      "INGRIDEINT_NAME": "Name",
       "INGRIDEINT_AMOUNT": "Amount",
       "CURRENT_READING": "Sugar measurement",
       "THE_RESULT": "Result"

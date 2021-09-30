@@ -1,6 +1,8 @@
+import { Direction } from '@angular/cdk/bidi';
 import { Injectable } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { TranslateService } from '@ngx-translate/core';
+import { snackBarOptions } from '../general-consts';
 
 @Injectable({
   providedIn: 'root'
@@ -18,30 +20,30 @@ export class SnackbarService {
   error(message: string): any {
     return this.snackbar.open(this.tranlsate.instant(message),
                               this.tranlsate.instant(this.closeActionText), {
-      panelClass: ['snackbar-error'],
-      duration: 5000,
-      direction: 'rtl',
-      verticalPosition: 'top',
+      panelClass: [snackBarOptions.PANEL_CLASS_ERROR],
+      duration: snackBarOptions.DURATION,
+      direction: snackBarOptions.DIRECTION_RTL as Direction,
+      verticalPosition: snackBarOptions.VERTICAL_POS_TOP as MatSnackBarVerticalPosition,
     });
   }
 
   success(message: string): any {
     return this.snackbar.open(this.tranlsate.instant(message),
                               this.tranlsate.instant(this.closeActionText), {
-      panelClass: ['snackbar-success'],
-      duration: 5000,
-      direction: 'rtl',
-      verticalPosition: 'top',
+      panelClass: [snackBarOptions.PANEL_CLASS_SUCCESS],
+      duration: snackBarOptions.DURATION,
+      direction: snackBarOptions.DIRECTION_RTL as Direction,
+      verticalPosition: snackBarOptions.VERTICAL_POS_TOP as MatSnackBarVerticalPosition,
     });
   }
 
   info(message: string): any {
     return this.snackbar.open(this.tranlsate.instant(message),
                               this.tranlsate.instant(this.closeActionText), {
-      panelClass: ['snackbar-info'],
-      duration: 3000,
-      direction: 'rtl',
-      verticalPosition: 'top',
+      panelClass: [snackBarOptions.PANEL_CLASS_INFOR],
+      duration: snackBarOptions.DURATION,
+      direction: snackBarOptions.DIRECTION_RTL as Direction,
+      verticalPosition: snackBarOptions.VERTICAL_POS_TOP as MatSnackBarVerticalPosition,
     });
   }
 }
