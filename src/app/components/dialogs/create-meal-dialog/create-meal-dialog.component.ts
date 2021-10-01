@@ -19,25 +19,25 @@ export class CreateMealDialogComponent implements OnInit {
 
   ingridients: IIngridient[] = []
   date = new Date();
-  mealTypeFormControl = new FormControl(null,Validators.required);
   mealTypes = [
     {
-    name: 'MEALS.TYPES.BREAKFAST',
-    type: eMealTypes.BREAKFAST
+      name: 'MEALS.TYPES.BREAKFAST',
+      type: eMealTypes.BREAKFAST
     },
     {
-    name: 'MEALS.TYPES.LAUNCH',
-    type: eMealTypes.LAUNCH
+      name: 'MEALS.TYPES.LAUNCH',
+      type: eMealTypes.LAUNCH
     },
     {
-    name: 'MEALS.TYPES.DINNER',
+      name: 'MEALS.TYPES.DINNER',
     type: eMealTypes.DINNER
-    },
-    {
+  },
+  {
     name: 'MEALS.TYPES.INTERMEDIATE',
     type: eMealTypes.INTERMEDIATE
-    }
-  ]
+  }
+]
+  mealTypeFormControl = new FormControl(this.mealTypes[0].type,Validators.required);
   formData = new FormData();
   newIngridientForm = new FormGroup({
     name: new FormControl(null,Validators.required),

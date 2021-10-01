@@ -47,6 +47,7 @@
   <div class="dialog-actions">
     <div class="image-and-reading-container" *ngIf='!!!data?.data || !!!data.data?.image'>
       <div class="image-container"
+           [ngClass]='{"image-container--loaded": formData.has("mealImage")}'
            (click)='fileUpload.click()'>
         <mat-icon class="camera-icon">camera_enhance</mat-icon>
       </div>

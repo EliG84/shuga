@@ -109,25 +109,6 @@
   }
 }
 
-// .ingridient-amount-container {
-//   margin-bottom: 2rem;
-//   display: flex;
-
-//   button {
-//     flex: 1;
-//   }
-
-//   input {
-//     height: 2rem;
-//   }
-//   input[type='number'] {
-//     width: 4rem;
-//   }
-//   > * {
-//     margin-left: 1rem;
-//   }
-// }
-
 .ingridient-view-container {
   > * {
     margin-bottom: 2rem;
@@ -176,10 +157,14 @@
   }
 }
 
-// .image-container--loaded {
-//   background: lightgreen;
-//   background-color: lightgreen;
-// }
+.meal-image {
+  min-width: 100%;
+  min-height: 45%;
+  max-width: 100%;
+  max-height: 45%;
+  object-fit: contain;
+  border-radius: 10px;
+}
 
 
 .dialog-actions {
