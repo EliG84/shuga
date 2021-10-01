@@ -1,4 +1,4 @@
-import { registerLocaleData } from '@angular/common';
+import { registerLocaleData, Location, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,6 +14,8 @@ import { SugarReadingDialogComponent } from './components/dialogs/sugar-reading-
 import { ConfirmationComponent } from './components/dialogs/confirmation/confirmation.component';
 import { CreateDayDialogComponent } from './components/dialogs/create-day-dialog/create-day-dialog.component';
 import { CreateMealDialogComponent } from './components/dialogs/create-meal-dialog/create-meal-dialog.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { LoaderComponent } from './shared/components/loader/loader.component';
 
 registerLocaleData(localeIl);
 
@@ -22,12 +24,21 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
 
+const classes: any[] = [
+  AppComponent,
+  SugarReadingDialogComponent,
+  ConfirmationComponent,
+  CreateDayDialogComponent,
+  CreateMealDialogComponent,
+  LoaderComponent]
+
 @NgModule({
-  declarations: [AppComponent, SugarReadingDialogComponent, ConfirmationComponent, CreateDayDialogComponent, CreateMealDialogComponent],
+  declarations: [...classes],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    MatProgressSpinnerModule,
     SharedModule,
     TranslateModule.forRoot({
       loader: {
@@ -38,6 +49,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     })
   ],
   providers: [
+    Location,
+    { provide: LocationStrategy, useClass: HashLocationStrategy},
     { provide: LOCALE_ID, useValue: 'he-IL' },
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],

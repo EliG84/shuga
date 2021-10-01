@@ -3,8 +3,8 @@
     "NAVIGATION": {
       "HOME": "Main creen",
       "MEALS_LIST": "Meals list",
-      "MORNING_READINGS": "Morning Measurements",
-      "ADD_MORGINING_READING": "Add new morning measure",
+      "MORNING_READINGS": "Morning measurements",
+      "ADD_MORGINING_READING": "Add fasting measurement",
       "GRAPH": "Graphs",
       "LOGOUT": "Logout"
     }
@@ -21,8 +21,8 @@
   },
   "HOME": {
     "MEALS": "View my meals",
-    "MORNING_READINGS": "Morning Measurements",
-    "ADD_MORGINING_READING": "Add new morning measure",
+    "MORNING_READINGS": "All fasting measurements",
+    "ADD_MORGINING_READING": "Add fasting measurment",
     "GRAPHS": "View graphs",
     "LOG_OUT": "Logout"
   },

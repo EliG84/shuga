@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { AppRoutingPath, RoutingPath } from 'src/app/models/routing.models';
-import { eDialogComponentType } from 'src/app/shared/general-consts';
+import { dialogHeights, eDialogComponentType } from 'src/app/shared/general-consts';
 import { DialogService } from 'src/app/shared/services/dialog.service';
 import { SnackbarService } from 'src/app/shared/services/snackbar.service';
 import { SugarReadingDialogComponent } from '../dialogs/sugar-reading-dialog/sugar-reading-dialog.component';
@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
       data: null,
       componentType: eDialogComponentType.SUGAR_READING,
       header: 'DIALOGS.MESSAGES.ADD_READING',
-      height: '50%'
+      height: dialogHeights.FULL_PERCENT
     });
   }
 

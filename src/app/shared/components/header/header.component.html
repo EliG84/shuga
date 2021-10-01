@@ -1,6 +1,6 @@
-<div class="toolbar" role="banner">
+<div class="toolbar">
 
-  <button mat-button [matMenuTriggerFor]="navigation" role="navigation"><mat-icon>more_vert</mat-icon></button>
+  <button mat-button [matMenuTriggerFor]="navigation"><mat-icon>more_vert</mat-icon></button>
   <mat-menu #navigation="matMenu">
     <button *ngFor='let option of navigationItems' mat-menu-item (click)='option.action()'>
       <mat-icon>{{option.icon}}</mat-icon>
@@ -10,7 +10,7 @@
 
 
   <ng-container *ngIf="appLanguages$ | async as languages">
-    <button mat-button [matMenuTriggerFor]="translation" role="translation">{{languageService.systemLang.displayName}}</button>
+    <button mat-button [matMenuTriggerFor]="translation">{{languageService.systemLang.displayName}}</button>
       <mat-menu #translation="matMenu">
         <button *ngFor='let lang of languages'
                 mat-menu-item

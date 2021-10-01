@@ -9,7 +9,7 @@ import { LanguageService } from '../../services/language.service';
 import { SugarReadingDialogComponent } from 'src/app/components/dialogs/sugar-reading-dialog/sugar-reading-dialog.component';
 import { first } from 'rxjs/operators';
 import { DialogService } from '../../services/dialog.service';
-import { eDialogComponentType, ePageRefresh } from '../../general-consts';
+import { dialogHeights, eDialogComponentType, ePageRefresh } from '../../general-consts';
 
 @Component({
   selector: 'app-header',
@@ -69,7 +69,7 @@ export class HeaderComponent {
       componentType: eDialogComponentType.SUGAR_READING,
       header: 'DIALOGS.MESSAGES.ADD_READING',
       source: ePageRefresh.READINGS,
-      height: '50%',
+      height: dialogHeights.FULL_PERCENT,
     });
   }
 

@@ -3,8 +3,8 @@
     "NAVIGATION": {
       "HOME": "למסך הראשי",
       "MEALS_LIST": "כל הארוחות",
-      "MORNING_READINGS": "למדדי בוקר",
-      "ADD_MORGINING_READING": "הוסיפי מדד בוקר חדש",
+      "MORNING_READINGS": "למדדי צום",
+      "ADD_MORGINING_READING": "הוסיפי מדד צום",
       "GRAPH": "לגרפים",
       "LOGOUT": "התנתקי"
     }
@@ -21,8 +21,8 @@
   },
   "HOME": {
     "MEALS": "צפיה בכל הארוחות",
-    "ADD_MORGINING_READING": "הוסיפי מדד בוקר חדש",
-    "MORNING_READINGS": "צפיה בכל ממדי הבוקר",
+    "ADD_MORGINING_READING": "הוסיפי מדד צום",
+    "MORNING_READINGS": "צפיה בכל מדדי צום",
     "GRAPHS": "מעבר לגרפים",
     "LOG_OUT": "התנתקי"
   },

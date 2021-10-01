@@ -33,7 +33,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [ "./node_modules/hammerjs/hammer.min.js"]
+            "scripts": [
+              "./node_modules/hammerjs/hammer.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -54,7 +56,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -96,7 +98,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [ "./node_modules/hammerjs/hammer.min.js"]
+            "scripts": [
+              "./node_modules/hammerjs/hammer.min.js"
+            ]
           }
         },
         "lint": {
