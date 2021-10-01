@@ -13,6 +13,9 @@
     "EMAIL": "דואר אלקטרוני",
     "PASSWORD": "סיסמה",
     "REPEAT_PASSWORD": "הקלידי את הסיסמה שוב",
+    "LOGIN": "פרטי כניסה",
+    "REGISTERATION": "פרטי הרשמה",
+    "HAVE_USER": "כבר רשומה ?",
     "SUBMIT": "כניסה",
     "REGISTER": "הרשמה"
   },

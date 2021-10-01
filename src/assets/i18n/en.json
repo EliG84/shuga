@@ -13,6 +13,9 @@
     "EMAIL": "Your Email",
     "PASSWORD": "Password",
     "REPEAT_PASSWORD": "Retype Password",
+    "LOGIN": "Login details",
+    "REGISTERATION": "Registration details",
+    "HAVE_USER": "Already registered ?",
     "SUBMIT": "Login",
     "REGISTER": "Register"
   },

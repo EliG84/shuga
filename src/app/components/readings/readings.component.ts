@@ -4,7 +4,7 @@ import { Observable, Subject } from 'rxjs';
 import { filter, first, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SugarReadingsService } from 'src/app/shared/api-services/sugar-readings.service';
 import { ISugarReading } from 'src/app/shared/api.models';
-import { eDialogComponentType, ePageRefresh } from 'src/app/shared/general-consts';
+import { dialogHeights, eDialogComponentType, ePageRefresh } from 'src/app/shared/general-consts';
 import { DialogService } from 'src/app/shared/services/dialog.service';
 import { PageRefreshService } from 'src/app/shared/services/page-refresh.service';
 import { ConfirmationComponent } from '../dialogs/confirmation/confirmation.component';
@@ -59,8 +59,8 @@ export class ReadingsComponent implements OnInit, OnDestroy, DoCheck {
     data: {
       header:  'DIALOGS.MESSAGES.DELETE'
     },
-    height: '50%',
-    width: '90%',
+    height: dialogHeights.FULL_PERCENT,
+    width: dialogHeights.FULL_PERCENT,
   });
   dialogRef.afterClosed().pipe(
     first(),

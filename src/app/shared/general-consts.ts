@@ -30,6 +30,9 @@ export enum eDialogStatus {
 
 export const dialogHeights = {
   SUGAR_READING: '50%',
+  FULL_PERCENT: '100%',
+  FULL_VH: '100vh',
+  HALF_PERCENT: '50%'
 }
 
 export enum eMealTypes {
@@ -53,5 +56,4 @@ export const snackBarOptions = {
   HORIZONTAL_POS_CENTER: 'center',
   HORIZONTAL_POS_END: 'end',
   HORIZONTAL_POS_LEFT: 'left',
-
 }

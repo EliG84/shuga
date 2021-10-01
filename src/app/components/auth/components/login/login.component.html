@@ -1,12 +1,29 @@
 <form [formGroup]='loginForm' class="form">
 
-  <label for="email">{{'AUTH.EMAIL' | translate}}</label>
-  <input formControlName='email' type="email" name="email" id="email">
+  <h3>{{'AUTH.LOGIN' | translate}}</h3>
 
-  <label for="password">{{'AUTH.PASSWORD' | translate}}</label>
-  <input formControlName='password' type="password" name="password" id="password">
-  <button type="button" (click)='submit()' [disabled]='loginForm.invalid'>
-    {{'AUTH.SUBMIT' | translate}}
+  <input formControlName='email'
+         type="email"
+         name="email"
+         id="email"
+         placeholder="{{'AUTH.EMAIL' | translate}}">
+
+  <input formControlName='password'
+         type="password"
+         name="password"
+         id="password"
+         placeholder="{{'AUTH.PASSWORD' | translate}}">
+  <button mat-raised-button
+          color='primary'
+          type="button"
+          (click)='submit()'
+          [disabled]='loginForm.invalid'
+          >{{'AUTH.SUBMIT' | translate}}
   </button>
-  <button type="button" [routerLink]="['/','auth','register']">{{'AUTH.REGISTER' | translate}}</button>
+  <button mat-raised-button
+          color='secondary'
+          type="button"
+          [routerLink]="['/','auth','register']"
+          >{{'AUTH.REGISTER' | translate}}
+  </button>
 </form>

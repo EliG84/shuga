@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { first } from 'rxjs/operators';
 import { CreateMealDialogComponent } from 'src/app/components/dialogs/create-meal-dialog/create-meal-dialog.component';
 import { MealsService } from 'src/app/shared/api-services/meals.service';
-import { eDialogStatus } from 'src/app/shared/general-consts';
+import { dialogHeights, eDialogStatus } from 'src/app/shared/general-consts';
 import { DialogService } from 'src/app/shared/services/dialog.service';
 import { PageRefreshService } from 'src/app/shared/services/page-refresh.service';
 
@@ -37,8 +37,8 @@ export class DayComponent implements DoCheck {
         date: this.date,
         header: 'DIALOGS.MESSAGES.ADD_MEAL'
       },
-      height: '100vh',
-      width: '100vh'
+      height: dialogHeights.FULL_PERCENT,
+      width: dialogHeights.FULL_VH
     });
     dialogRef.afterClosed().pipe(first())
     .subscribe((res: {status: eDialogStatus, mealId?: string}) => {

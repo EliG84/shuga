@@ -1,10 +1,30 @@
 <form [formGroup]='registrationForm' class="form">
-  <label for="email">{{'AUTH.EMAIL' | translate}}</label>
-  <input formControlName='email' type="email" name="" id="">
-  <label for="password">{{'AUTH.PASSWORD' | translate}}</label>
-  <input formControlName='password' type="password" name="password" id="password">
-  <label for="repeat_password">{{'AUTH.REPEAT_PASSWORD' | translate}}</label>
-  <input formControlName='repeat_password' type="password" name="repeat_password" id="repeat_password">
-  <button type="button" (click)='submit()' [disabled]='registrationForm.invalid'>{{'AUTH.REGISTER' | translate}}</button>
-  <button type="button" [routerLink]="['/','auth','login']">{{'AUTH.SUBMIT' | translate}}</button>
+
+  <h3>{{'AUTH.REGISTERATION' | translate}}</h3>
+
+  <input formControlName='email'
+         type="email"
+         name="email"
+         placeholder="{{'AUTH.EMAIL' | translate}}">
+
+  <input formControlName='password'
+        type="password" name="password"
+        placeholder="{{'AUTH.PASSWORD' | translate}}">
+
+  <input formControlName='repeat_password'
+         type="password"
+         name="repeat_password"
+         placeholder="{{'AUTH.REPEAT_PASSWORD' | translate}}">
+
+  <button type="button"
+          (click)='submit()'
+          [disabled]='registrationForm.invalid'
+          mat-raised-button color='primary'
+          >{{'AUTH.REGISTER' | translate}}
+  </button>
+  <button type="button"
+          [routerLink]="['/','auth','login']"
+          mat-raised-button color='secondary'
+          >{{'AUTH.HAVE_USER' | translate}}
+  </button>
 </form>

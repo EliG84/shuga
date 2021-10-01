@@ -1,8 +1,8 @@
-::ng-deep {
-  .cdk-overlay-pane {
-    max-width: 100vw !important;
-  }
-}
+// ::ng-deep {
+//   .cdk-overlay-pane {
+//     max-width: 100% !important;
+//   }
+// }
 
 .dialog-container {
   direction: rtl;
@@ -46,8 +46,8 @@
 .dialog-content {
   flex: 1;
   padding: 0 10px;
-  overflow: hidden;
-  overflow-y: auto;
+  // overflow: hidden;
+  // overflow-y: auto;
 }
 
 .meal-date-time-container {

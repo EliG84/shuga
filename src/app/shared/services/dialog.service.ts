@@ -21,7 +21,7 @@ export class DialogService {
     const dialogRef = this.dialog.open(this.chooseComponent(payload?.componentType),{
       data: payload,
       height: payload?.height,
-      width: '100%'
+      width: '100vh',
     });
     dialogRef.afterClosed().pipe(first())
     .subscribe((payload: IDialogResponse) =>{

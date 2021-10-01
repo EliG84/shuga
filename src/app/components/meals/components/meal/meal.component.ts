@@ -58,6 +58,7 @@ export class MealComponent implements OnInit, OnDestroy, DoCheck {
   updateMeal(): void {
     this.dialogService.openDialog({
       data: this.meal,
+      date: this.meal?.date,
       source: ePageRefresh.MEALS,
       componentType: eDialogComponentType.ADD_MEAL,
       height: '100%',
@@ -70,8 +71,8 @@ export class MealComponent implements OnInit, OnDestroy, DoCheck {
       data: {
         header: 'DIALOGS.MESSAGES.DELETE'
       },
-      height: '50%',
-      width: '90%'
+      height: dialogHeights.FULL_PERCENT,
+      width: dialogHeights.FULL_PERCENT
     });
     dialogRef.afterClosed().pipe(
       first(),
@@ -83,15 +84,13 @@ export class MealComponent implements OnInit, OnDestroy, DoCheck {
   }
 
   sugarReadingForMeal(): void {
-    console.log(this.meal?.time);
-    console.log(new Date(this.meal!.time));
     this.dialogService.openDialog({
       data: this.meal?.reading || null,
       mealId: this.meal?._id,
       date: new Date(this.meal?.time!),
       source: ePageRefresh.MEALS,
       componentType: eDialogComponentType.SUGAR_READING,
-      height: dialogHeights.SUGAR_READING,
+      height: dialogHeights.FULL_PERCENT,
       header: this.meal?.reading ? 'DIALOGS.MESSAGES.UPDATE_READING' : 'DIALOGS.MESSAGES.ADD_READING'
     });
   }
