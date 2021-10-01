@@ -4,6 +4,7 @@
       "HOME": "למסך הראשי",
       "MEALS_LIST": "כל הארוחות",
       "MORNING_READINGS": "למדדי צום",
+      "ALL_READINGS": "לכל המדדים",
       "ADD_MORGINING_READING": "הוסיפי מדד צום",
       "GRAPH": "לגרפים",
       "LOGOUT": "התנתקי"
@@ -23,6 +24,7 @@
     "MEALS": "צפיה בכל הארוחות",
     "ADD_MORGINING_READING": "הוסיפי מדד צום",
     "MORNING_READINGS": "צפיה בכל מדדי צום",
+    "ALL_READINGS": "צפיה בכל המדדים",
     "GRAPHS": "מעבר לגרפים",
     "LOG_OUT": "התנתקי"
   },
@@ -61,7 +63,7 @@
       "ADD_MEAL": "הוספת ארוחה",
       "EDIT_MEAL": "עדכון ארוחה",
       "THE_INGRIDIENTS": "מרכיבים",
-      "INGRIDEINT_NAME": "שם",
+      "INGRIDEINT_NAME": "מרכיב",
       "INGRIDEINT_AMOUNT": "כמות",
       "CURRENT_READING": "מדד סוכר",
       "THE_RESULT": "המדד"

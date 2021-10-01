@@ -21,7 +21,12 @@ const routes: Routes = [
       {
         path: AppRoutingPath.MORNING_READINGS,
         loadChildren: () => import ('../readings/readings.module').then(m => m.ReadingsModule),
-        data: {attributeKey: dataAttributeKeys.LOCAITON, attributeValue: AppRoutingPath.MORNING_READINGS}
+        data: {attributeKey: dataAttributeKeys.LOCAITON, attributeValue: AppRoutingPath.MORNING_READINGS, isMorningReading: true}
+      },
+      {
+        path: AppRoutingPath.ALL_READINGS,
+        loadChildren: () => import ('../readings/readings.module').then(m => m.ReadingsModule),
+        data: {attributeKey: dataAttributeKeys.LOCAITON, attributeValue: AppRoutingPath.MORNING_READINGS, isMorningReading: false}
       },
       {
         path: AppRoutingPath.GRAPHS,

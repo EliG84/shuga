@@ -34,6 +34,10 @@
   font-size: 1.5rem;
   background-color: var(--bullet-graph-backing-outline);
 
+  &--morning {
+    border: 4px solid orange;
+  }
+
   mat-icon {
     display: flex;
     align-items: center;

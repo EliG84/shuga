@@ -2,7 +2,8 @@
   <app-day *ngFor='let day of days; trackBy:identify'
            [date]='day.date'
            [meals]='day.meals'
-           [dayId]='day._id'>
+           [dayId]='day._id'
+           (deleteDayEmmiter)='deleteDay($event)'>
   </app-day>
   <button class="add-day-button"
           (click)='addDay()'>

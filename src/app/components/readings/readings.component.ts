@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, OnDestroy, ChangeDetectorRef, DoCheck } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { filter, first, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SugarReadingsService } from 'src/app/shared/api-services/sugar-readings.service';
@@ -26,13 +27,14 @@ export class ReadingsComponent implements OnInit, OnDestroy, DoCheck {
               private refreshService: PageRefreshService,
               private dialogService: DialogService,
               private cd: ChangeDetectorRef,
-              private matDialog: MatDialog) { }
+              private matDialog: MatDialog,
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.refreshService.refresh$
     .pipe(
       filter((source) => source === ePageRefresh.READINGS),
-      switchMap(() => this.sugarReadingsService.getAllReadings(true)),
+      switchMap(() => this.sugarReadingsService.getAllReadings(this.route?.snapshot?.data?.isMorningReading)),
       takeUntil(this.destroy$)
       ).subscribe((data) => {
         if (Array.isArray(data)) {

@@ -1,25 +1,40 @@
 :host {
-  min-width: 100vw;
-  min-height: calc(100vh - var(--app-header-height) - 4rem);
-  height: calc(100vh - var(--app-header-height) - 4rem);
-  max-height: calc(100vh - var(--app-header-height) - 4rem);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
+  // min-width: 100vw;
+  // min-height: calc(100vh - var(--app-header-height) - 4rem);
+  // height: calc(100vh - var(--app-header-height) - 4rem);
+  // max-height: calc(100vh - var(--app-header-height) - 4rem);
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // padding: 1rem;
+  width: 100%;
 }
 
 .meal-container {
   height: 100%;
-  width: 100vw;
-  border: 1px solid var(--blue-4);
-  border-radius: 10px;
-  box-shadow: 1px 1px 4px 0px;
-  padding: 10px;
   direction: rtl;
+  // width: 100vw;
+  // border: 1px solid var(--blue-4);
+  // border-radius: 10px;
+  // box-shadow: 1px 1px 4px 0px;
+  // padding: 10px;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  background: var(--blue-6);
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.meal-reading {
+  display: flex;
+  align-items: center;
+
+  .reading-result {
+    margin: 0 1rem;
+  }
 }
 
 .meal-controls {

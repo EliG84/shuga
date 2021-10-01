@@ -22,7 +22,6 @@
       </div>
     </div>
       <div class="form-container" [formGroup]='newIngridientForm'>
-        <h5>{{'DIALOGS.MESSAGES.THE_INGRIDIENTS' | translate}}</h5>
         <div class="ingridient-name-container">
           <label for="ingrident-name">{{'DIALOGS.MESSAGES.INGRIDEINT_NAME' | translate}}: </label>
           <input formControlName='name' type="text" id="ingridient-name">
@@ -46,18 +45,26 @@
       </div>
   </div>
   <div class="dialog-actions">
-    <div class="image-and-reading-container">
-      <div class="image-container" [ngClass]='{"image-container--loaded": formData.has("mealImage")}' (click)='fileUpload.click()'>
-        <input #fileUpload
-               type="file"
-               accept="image/*"
-               capture="environment"
-               class="display-none"
-               (change)="changeImage($event.target)">
+    <div class="image-and-reading-container" *ngIf='!!!data?.data || !!!data.data?.image'>
+      <div class="image-container"
+           (click)='fileUpload.click()'>
         <mat-icon class="camera-icon">camera_enhance</mat-icon>
       </div>
     </div>
+    <img class="meal-image"
+         *ngIf='!!data.data?.image'
+         [src]="data.data?.image"
+         alt="meal-image"
+         (click)='fileUpload.click()'
+         appImagePlaceholder>
     <button mat-raised-button color="primary" (click)='save()' [disabled]='mealTypeFormControl.invalid'>{{'DIALOGS.CONFIRM' | translate}}</button>
     <button mat-raised-button class="cancel-button" (click)='closeDialog()'>{{'DIALOGS.CANCEL' | translate}}</button>
   </div>
 </div>
+
+<input #fileUpload
+       type="file"
+       accept="image/*"
+       capture="environment"
+       class="display-none"
+       (change)="changeImage($event.target)">

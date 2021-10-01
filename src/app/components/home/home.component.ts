@@ -1,13 +1,9 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { first } from 'rxjs/operators';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { AppRoutingPath, RoutingPath } from 'src/app/models/routing.models';
 import { dialogHeights, eDialogComponentType } from 'src/app/shared/general-consts';
 import { DialogService } from 'src/app/shared/services/dialog.service';
-import { SnackbarService } from 'src/app/shared/services/snackbar.service';
-import { SugarReadingDialogComponent } from '../dialogs/sugar-reading-dialog/sugar-reading-dialog.component';
 
 @Component({
   selector: 'app-home',
@@ -29,6 +25,10 @@ export class HomeComponent implements OnInit {
     {
       name: 'HOME.MORNING_READINGS',
       action: () => this.router.navigate(['/',RoutingPath.APP,AppRoutingPath.MORNING_READINGS])
+    },
+    {
+      name: 'HOME.ALL_READINGS',
+      action: () => this.router.navigate(['/',RoutingPath.APP,AppRoutingPath.ALL_READINGS])
     },
     {
       name: 'HOME.GRAPHS',

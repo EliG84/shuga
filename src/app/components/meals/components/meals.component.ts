@@ -58,4 +58,9 @@ export class MealsComponent implements OnInit, OnDestroy, DoCheck {
    })
  }
 
+ deleteDay(id: string): void {
+  this.dayApiServie.delete(id)
+  .subscribe(() => this.refreshService.refresh$.next(ePageRefresh.DAYS))
+ }
+
 }

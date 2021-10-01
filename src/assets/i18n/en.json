@@ -4,6 +4,7 @@
       "HOME": "Main creen",
       "MEALS_LIST": "Meals list",
       "MORNING_READINGS": "Morning measurements",
+      "ALL_READINGS": "All measurements",
       "ADD_MORGINING_READING": "Add fasting measurement",
       "GRAPH": "Graphs",
       "LOGOUT": "Logout"
@@ -22,6 +23,7 @@
   "HOME": {
     "MEALS": "View my meals",
     "MORNING_READINGS": "All fasting measurements",
+    "ALL_READINGS": "All measurments",
     "ADD_MORGINING_READING": "Add fasting measurment",
     "GRAPHS": "View graphs",
     "LOG_OUT": "Logout"
@@ -61,7 +63,7 @@
       "ADD_MEAL": "Add meal",
       "EDIT_MEAL": "Update meal",
       "THE_INGRIDIENTS": "Ingridients",
-      "INGRIDEINT_NAME": "Name",
+      "INGRIDEINT_NAME": "Ingridient",
       "INGRIDEINT_AMOUNT": "Amount",
       "CURRENT_READING": "Sugar measurement",
       "THE_RESULT": "Result"

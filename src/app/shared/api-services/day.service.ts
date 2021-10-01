@@ -18,4 +18,8 @@ export class DayService {
   create(body: IDayRequest): Observable<IDayResponse> {
     return this.httpService.post(`${DAY_API.BASE}/${DAY_API.CREATE}`, body);
   }
+
+  delete(id: string): Observable<any> {
+    return this.httpService.post(`${DAY_API.BASE}/${DAY_API.DELETE}/${id}`, {});
+  }
 }

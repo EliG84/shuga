@@ -37,6 +37,11 @@ export class HeaderComponent {
       action: () => this.openScackbar()
     },
     {
+      name: 'HEADER.NAVIGATION.ALL_READINGS',
+      icon: ' list_alt',
+      action: () => this.router.navigate(['/', RoutingPath.APP,AppRoutingPath.ALL_READINGS])
+    },
+    {
       name: 'HEADER.NAVIGATION.MEALS_LIST',
       icon: 'list_alt',
       action: () => this.router.navigate(['/', RoutingPath.APP,AppRoutingPath.MEALS])
