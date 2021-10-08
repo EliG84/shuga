@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Inject } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { of } from 'rxjs';
@@ -124,6 +124,11 @@ export class CreateMealDialogComponent implements OnInit {
       this.formData.append('mealImage', file, file.name);
     }
     inputFileElement.value = null;
+    if (this.data.data?._id && this.data?.data && !!this.data?.data?.image) {
+      this.getBase64(this.formData).then((image) => {
+        this.data.data!.image = image;
+      });
+    }
   }
 
   getTime(date: Date): number {
@@ -138,5 +143,14 @@ export class CreateMealDialogComponent implements OnInit {
                          status: eDialogStatus.DISMISS});
   }
 
+  getBase64(formData: any): Promise<any> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(formData.get('mealImage'));
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = error => reject(error);
+      // formData.delete('mealImage');
+    });
+  }
 
 }

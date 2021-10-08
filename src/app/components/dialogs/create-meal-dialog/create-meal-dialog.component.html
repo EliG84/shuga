@@ -48,24 +48,44 @@
     <div class="image-and-reading-container" *ngIf='!!!data?.data || !!!data.data?.image'>
       <div class="image-container"
            [ngClass]='{"image-container--loaded": formData.has("mealImage")}'
-           (click)='fileUpload.click()'>
+           (click)='cameraUpload.click()'>
         <mat-icon class="camera-icon">camera_enhance</mat-icon>
       </div>
+      <div class="image-container"
+           [ngClass]='{"image-container--loaded": formData.has("mealImage")}'
+           (click)='fileUpload.click()'>
+        <mat-icon class="camera-icon">image</mat-icon>
+      </div>
+    </div>
+    <div *ngIf='!!data.data?.image'
+         class="image-container--absolute-left"
+         (click)='cameraUpload.click()'>
+         <mat-icon class="camera-icon">camera_enhance</mat-icon>
+    </div>
+    <div *ngIf='!!data.data?.image'
+         class="image-container--absolute-right"
+         (click)='fileUpload.click()'>
+        <mat-icon class="camera-icon">image</mat-icon>
     </div>
     <img class="meal-image"
          *ngIf='!!data.data?.image'
          [src]="data.data?.image"
          alt="meal-image"
-         (click)='fileUpload.click()'
+         (click)='cameraUpload.click()'
          appImagePlaceholder>
     <button mat-raised-button color="primary" (click)='save()' [disabled]='mealTypeFormControl.invalid'>{{'DIALOGS.CONFIRM' | translate}}</button>
     <button mat-raised-button class="cancel-button" (click)='closeDialog()'>{{'DIALOGS.CANCEL' | translate}}</button>
   </div>
 </div>
 
-<input #fileUpload
+<input #cameraUpload
        type="file"
        accept="image/*"
        capture="environment"
        class="display-none"
        (change)="changeImage($event.target)">
+<input #fileUpload
+      type="file"
+      class="display-none"
+      accept="image/*"
+      (change)="changeImage($event.target)">
