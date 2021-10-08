@@ -1,0 +1,54 @@
+@import "~igniteui-angular/lib/core/styles/themes/index";
+// Uncomment the following lines if you want to add a custom palette:
+// $primary: #731963 !default;
+// $secondary: #ce5712 !default;
+// $app-palette: igx-palette($primary, $secondary);
+
+/* autoprefixer grid: on */
+
+@include igx-core();
+@include igx-theme($default-palette);
+
+mat-icon {
+  cursor: pointer;
+}
+
+input, select {
+  border: none;
+  border-bottom: 1px solid var(--blue-2);
+}
+
+
+.igx-time-picker__header, .igx-calendar__header {
+  background: var(--pink-base) !important;
+}
+
+.igx-time-picker__column, .igx-calendar__column {
+  color: var(--pink-base) !important;
+}
+
+.igx-time-picker__item--selected, .igx-calendar__date--selected {
+  color: var(--bullet-graph-scale-background-brush) !important;
+  .igx-calendar__date-content {
+    background: transparent !important;
+    color: var(--bullet-graph-scale-background-brush) !important;
+  }
+}
+
+.igx-calendar__date--current {
+  .igx-calendar__date-content {
+    color: var(--bullet-graph-scale-background-brush) !important;
+  }
+}
+
+.igx-button--flat {
+  color: var(--bullet-graph-scale-background-brush) !important;
+}
+
+.igx-time-picker {
+  border-radius: 22px;
+}
+
+.igx-date-picker {
+  border-radius: 22px;
+}

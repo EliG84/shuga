@@ -19,6 +19,7 @@ import {
 	IgxTimePickerModule
  } from "igniteui-angular";
 import { ShareDirectiveModule } from './share-directive.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const classes: any[] = [HeaderComponent];
 const sharedModules: any[] = [ShareDirectiveModule];
