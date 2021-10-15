@@ -1,7 +1,5 @@
 import { registerLocaleData, Location, LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { LOCALE_ID, NgModule } from '@angular/core';
-import { BrowserModule, HammerModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Inject, Injectable, LOCALE_ID, NgModule } from '@angular/core';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import localeIl from '@angular/common/locales/he';
@@ -16,6 +14,8 @@ import { CreateDayDialogComponent } from './components/dialogs/create-day-dialog
 import { CreateMealDialogComponent } from './components/dialogs/create-meal-dialog/create-meal-dialog.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { LoaderComponent } from './shared/components/loader/loader.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HammerModule } from '@angular/platform-browser';
 
 registerLocaleData(localeIl);
 
@@ -35,11 +35,10 @@ const classes: any[] = [
 @NgModule({
   declarations: [...classes],
   imports: [
-    BrowserModule,
     BrowserAnimationsModule,
-    HammerModule,
     AppRoutingModule,
     MatProgressSpinnerModule,
+    HammerModule,
     SharedModule,
     TranslateModule.forRoot({
       loader: {
@@ -53,7 +52,7 @@ const classes: any[] = [
     Location,
     { provide: LocationStrategy, useClass: HashLocationStrategy},
     { provide: LOCALE_ID, useValue: 'he-IL' },
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })

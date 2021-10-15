@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, OnDestroy, DoCheck } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
-import { filter, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { filter, switchMap, takeUntil } from 'rxjs/operators';
 import { DayService } from 'src/app/shared/api-services/day.service';
 import { IDayResponse } from 'src/app/shared/api.models';
 import { eDialogComponentType, ePageRefresh } from 'src/app/shared/general-consts';

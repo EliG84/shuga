@@ -19,11 +19,11 @@ import {
 	IgxTimePickerModule
  } from "igniteui-angular";
 import { ShareDirectiveModule } from './share-directive.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const classes: any[] = [HeaderComponent];
 const sharedModules: any[] = [ShareDirectiveModule];
 const externalModules: any[] = [
+  CommonModule,
   FormsModule,
   ReactiveFormsModule,
   HttpClientModule,
@@ -36,7 +36,7 @@ const externalModules: any[] = [
   MatDialogModule,
   MatSnackBarModule,
   IgxDatePickerModule,
-  IgxTimePickerModule
+  IgxTimePickerModule,
 ];
 
 

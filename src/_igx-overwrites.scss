@@ -52,3 +52,11 @@ input, select {
 .igx-date-picker {
   border-radius: 22px;
 }
+
+.igx-time-picker__column {
+  max-width: 10rem;
+}
+
+.igx-time-picker__item {
+  width: 5rem;
+}
