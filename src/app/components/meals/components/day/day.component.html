@@ -1,31 +1,49 @@
-<div class="day-container">
-  <span class="date-span">{{date | date : 'dd/MM/YYYY'}}</span>
-  <mat-icon *ngIf='!!!meals?.length'
-            class="delete-day"
-            (click)='deleteDay()'
-            >delete
-  </mat-icon>
-  <div class="day-content-container">
-    <div class='meals-container'>
-      <app-meal *ngFor='let meal of meals'
-                [mealId]='meal'
-                (deleted)="removeMeal($event)">
-      </app-meal>
-      <div *ngIf='!!!meals?.length'
-            class="add-first-meal">
-        <h4>{{'MEALS.ADD_MEAL' | translate}}</h4>
-        <button class="add-first-meal-button"
-                (click)='addMeal()'>
-                <mat-icon>add_circle_outline</mat-icon>
-        </button>
-      </div>
-      <div *ngIf='!!meals?.length' class="add-meals">
-        <h6>{{'MEALS.ADD_MEAL' | translate}}</h6>
-        <button (click)='addMeal()'
-                class="add-meal-button"
-                ><mat-icon>add_circle_outline</mat-icon>
-        </button>
+<div *ngIf='!detailedView || (detailedView && !!meals?.length)' class="day-container">
+
+  <ng-container *ngTemplateOutlet="detailedView ? detailedMode : editMode"></ng-container>
+
+  <ng-template #detailedMode>
+    <span class="date-span">{{date | date : 'dd/MM/YYYY'}}</span>
+    <div class="day-content-container">
+      <div class='meals-container'>
+        <app-meal *ngFor='let meal of meals'
+                  [mealId]='meal'
+                  [detailedView]='detailedView'
+                  (deleted)="removeMeal($event)">
+        </app-meal>
       </div>
     </div>
-  </div>
+  </ng-template>
+
+  <ng-template #editMode>
+    <span class="date-span">{{date | date : 'dd/MM/YYYY'}}</span>
+    <mat-icon *ngIf='!!!meals?.length'
+              class="delete-day"
+              (click)='deleteDay()'
+              >delete
+    </mat-icon>
+    <div class="day-content-container">
+      <div class='meals-container'>
+        <app-meal *ngFor='let meal of meals'
+                  [mealId]='meal'
+                  (deleted)="removeMeal($event)">
+        </app-meal>
+        <div *ngIf='!!!meals?.length'
+              class="add-first-meal">
+          <h4>{{'MEALS.ADD_MEAL' | translate}}</h4>
+          <button class="add-first-meal-button"
+                  (click)='addMeal()'>
+                  <mat-icon>add_circle_outline</mat-icon>
+          </button>
+        </div>
+        <div *ngIf='!!meals?.length' class="add-meals">
+          <h6>{{'MEALS.ADD_MEAL' | translate}}</h6>
+          <button (click)='addMeal()'
+                  class="add-meal-button"
+                  ><mat-icon>add_circle_outline</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
 </div>

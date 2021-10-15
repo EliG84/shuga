@@ -2,10 +2,11 @@
   "HEADER": {
     "NAVIGATION": {
       "HOME": "למסך הראשי",
-      "MEALS_LIST": "כל הארוחות",
-      "MORNING_READINGS": "למדדי צום",
+      "MEALS_LIST": "צפיה בארוחות",
+      "MEALS_ADD": "הוספת ארוחות",
+      "MORNING_READINGS": "צפיה במדדי צום",
       "ALL_READINGS": "לכל המדדים",
-      "ADD_MORGINING_READING": "הוסיפי מדד צום",
+      "ADD_MORGINING_READING": "הוספת מדד צום",
       "GRAPH": "לגרפים",
       "LOGOUT": "התנתקי"
     }
@@ -21,9 +22,10 @@
     "REGISTER": "הרשמה"
   },
   "HOME": {
-    "MEALS": "צפיה בכל הארוחות",
-    "ADD_MORGINING_READING": "הוסיפי מדד צום",
-    "MORNING_READINGS": "צפיה בכל מדדי צום",
+    "MEALS": "צפיה בארוחות",
+    "ADD_MEALS": "הוספת ארוחות",
+    "ADD_MORGINING_READING": "הוספת מדד צום",
+    "MORNING_READINGS": "צפיה  במדדי צום",
     "ALL_READINGS": "צפיה בכל המדדים",
     "GRAPHS": "מעבר לגרפים",
     "LOG_OUT": "התנתקי"

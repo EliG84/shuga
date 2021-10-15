@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 import { filter, first, switchMap, takeUntil } from 'rxjs/operators';
 import { ConfirmationComponent } from 'src/app/components/dialogs/confirmation/confirmation.component';
 import { MealsService } from 'src/app/shared/api-services/meals.service';
-import { IMealResponse } from 'src/app/shared/api.models';
+import { IIngridient, IMealResponse } from 'src/app/shared/api.models';
 import { dialogHeights, eDialogComponentType, eMealTypes, ePageRefresh } from 'src/app/shared/general-consts';
 import { DialogService } from 'src/app/shared/services/dialog.service';
 import { PageRefreshService } from 'src/app/shared/services/page-refresh.service';
@@ -19,6 +19,8 @@ export class MealComponent implements OnInit, OnDestroy, DoCheck {
 
   @Input()
   mealId: string | undefined;
+  @Input()
+  detailedView: boolean | undefined;
   @Output()
   deleted = new EventEmitter<string>()
   destroy$ = new Subject();
@@ -109,5 +111,9 @@ export class MealComponent implements OnInit, OnDestroy, DoCheck {
         return '';
     }
   }
+
+  identify(index: number, item: IIngridient): number {
+    return index;
+ }
 
 }

@@ -1,12 +1,9 @@
-import { Component, ChangeDetectionStrategy, Input, ChangeDetectorRef, DoCheck, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, ChangeDetectorRef, DoCheck, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { first } from 'rxjs/operators';
 import { CreateMealDialogComponent } from 'src/app/components/dialogs/create-meal-dialog/create-meal-dialog.component';
-import { MealsService } from 'src/app/shared/api-services/meals.service';
 import { ISugarReading } from 'src/app/shared/api.models';
 import { dialogHeights, eDialogStatus } from 'src/app/shared/general-consts';
-import { DialogService } from 'src/app/shared/services/dialog.service';
-import { PageRefreshService } from 'src/app/shared/services/page-refresh.service';
 
 @Component({
   selector: 'app-day',
@@ -22,6 +19,8 @@ export class DayComponent implements DoCheck {
   date: Date | undefined;
   @Input()
   meals: string[] | undefined;
+  @Input()
+  detailedView: boolean | undefined;
   @Output()
   deleteDayEmmiter = new EventEmitter<string>();
   reading: ISugarReading | undefined;

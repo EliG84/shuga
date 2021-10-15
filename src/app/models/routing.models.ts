@@ -14,3 +14,7 @@ export const AppRoutingPath = {
   MORNING_READINGS: 'morning-measurements',
   ALL_READINGS: 'all-measurements'
 }
+
+export const MealsRoutingPath = {
+  DETAILED: 'detailed'
+}

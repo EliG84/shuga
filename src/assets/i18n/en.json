@@ -2,7 +2,8 @@
   "HEADER": {
     "NAVIGATION": {
       "HOME": "Main creen",
-      "MEALS_LIST": "Meals list",
+      "MEALS_LIST": "View all meals",
+      "MEALS_ADD": "Add meals",
       "MORNING_READINGS": "Morning measurements",
       "ALL_READINGS": "All measurements",
       "ADD_MORGINING_READING": "Add fasting measurement",
@@ -22,6 +23,7 @@
   },
   "HOME": {
     "MEALS": "View my meals",
+    "ADD_MEALS": "Add meals",
     "MORNING_READINGS": "All fasting measurements",
     "ALL_READINGS": "All measurments",
     "ADD_MORGINING_READING": "Add fasting measurment",

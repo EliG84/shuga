@@ -3,9 +3,11 @@
            [date]='day.date'
            [meals]='day.meals'
            [dayId]='day._id'
+           [detailedView]='detailedView'
            (deleteDayEmmiter)='deleteDay($event)'>
   </app-day>
-  <button class="add-day-button"
+  <button *ngIf='!detailedView'
+          class="add-day-button"
           (click)='addDay()'>
     <mat-icon>add_circle_outline</mat-icon>
   </button>
@@ -14,7 +16,8 @@
 <ng-template #noDays>
   <div class="days-container days-container--empty">
     <h3>{{'MEALS.ADD_DAY' | translate}}</h3>
-    <button class="add-day-button"
+    <button *ngIf='!detailedView'
+            class="add-day-button"
             (click)='addDay()'>
       <mat-icon>add_circle_outline</mat-icon>
     </button>

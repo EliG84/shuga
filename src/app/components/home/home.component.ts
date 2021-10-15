@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
-import { AppRoutingPath, RoutingPath } from 'src/app/models/routing.models';
+import { AppRoutingPath, MealsRoutingPath, RoutingPath } from 'src/app/models/routing.models';
 import { dialogHeights, eDialogComponentType } from 'src/app/shared/general-consts';
 import { DialogService } from 'src/app/shared/services/dialog.service';
 
@@ -15,8 +15,12 @@ export class HomeComponent implements OnInit {
 
   menuItems = [
     {
-      name: 'HOME.MEALS',
+      name: 'HOME.ADD_MEALS',
       action: () => this.router.navigate(['/',RoutingPath.APP,AppRoutingPath.MEALS])
+    },
+    {
+      name: 'HOME.MEALS',
+      action: () => this.router.navigate(['/',RoutingPath.APP,AppRoutingPath.MEALS,MealsRoutingPath.DETAILED])
     },
     {
       name: 'HOME.ADD_MORGINING_READING',

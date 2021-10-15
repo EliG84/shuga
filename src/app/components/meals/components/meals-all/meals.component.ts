@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, OnDestroy, DoCheck } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { filter, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { DayService } from 'src/app/shared/api-services/day.service';
@@ -16,12 +17,19 @@ import { PageRefreshService } from 'src/app/shared/services/page-refresh.service
 export class MealsComponent implements OnInit, OnDestroy, DoCheck {
 
   destroy$ = new Subject();
+  detailedView: boolean | undefined;
   days: IDayResponse[] = [];
 
   constructor(private dayApiServie: DayService,
               private refreshService: PageRefreshService,
               private cd: ChangeDetectorRef,
-              private dialogService: DialogService) { }
+              private dialogService: DialogService,
+              private activatedRoute: ActivatedRoute) {
+                activatedRoute.data.pipe(takeUntil(this.destroy$))
+                .subscribe(({detailed}) => {
+                  this.detailedView = detailed || false;
+                });
+              }
 
   ngOnInit(): void {
     this.refreshService.refresh$
@@ -33,7 +41,7 @@ export class MealsComponent implements OnInit, OnDestroy, DoCheck {
       if (Array.isArray(data)) {
         this.days = data;
       }
-    })
+    });
     this.refreshService.refresh$.next(ePageRefresh.DAYS);
   }
 
