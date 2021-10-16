@@ -9,15 +9,20 @@
   <div class="dialog-content-container">
 
     <p *ngIf='!data?.mealId' (click)='datePicker.openDialog()'><mat-icon>edit</mat-icon>{{date | date : 'dd/MM/YYYY'}}</p>
-    <p (click)='timePicker.openDialog()'><mat-icon>watch_later</mat-icon>{{date | date: 'HH:mm'}}</p>
-
+    <!-- <p (click)='timePicker.openDialog()'><mat-icon>watch_later</mat-icon>{{date | date: 'HH:mm'}}</p> -->
+    <igx-time-picker #timePicker
+                    class="time-picker-container"
+                    [format]="'H:mm'"
+                    [(ngModel)]='date'
+                    mode='dropdown'>
+    </igx-time-picker>
     <div class="display-none">
       <igx-date-picker class="date-picker-container" #datePicker [(ngModel)]='date'>
         <label igxLabel>{{'DIALOGS.DATE' | translate}}</label>
       </igx-date-picker>
-      <igx-time-picker #timePicker class="time-picker-container" [(ngModel)]='date'>
+      <!-- <igx-time-picker #timePicker class="time-picker-container" [(ngModel)]='date'>
         <label igxLabel>{{'DIALOGS.TIME' | translate}}</label>
-      </igx-time-picker>
+      </igx-time-picker> -->
     </div>
 
     <div class="measure-input-container">

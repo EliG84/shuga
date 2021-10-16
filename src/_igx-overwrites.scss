@@ -63,6 +63,7 @@ input, select {
 
 .time-picker-container {
   igx-input-group {
+    padding: 2rem 0 !important;
     .igx-input-group__bundle {
       display: flex;
       align-items: center;
@@ -80,6 +81,7 @@ input, select {
     }
     input {
       font-size: 2rem !important;
+      padding: 2rem 0 !important;
       text-align: center !important;
     }
   }
