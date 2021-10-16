@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Inject } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SugarReadingsService } from 'src/app/shared/api-services/sugar-readings.service';
 import { ISugarReading } from 'src/app/shared/api.models';
