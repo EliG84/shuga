@@ -20,6 +20,7 @@ export const DAY_API = {
   BASE: 'day',
   READ_ALL: 'read/all',
   CREATE: 'create',
+  WATER: 'water',
   DELETE: 'delete',
 }
 

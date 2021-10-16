@@ -26,6 +26,19 @@
     top: 12px;
     color: red;
   }
+
+  .water-container {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    position: absolute;
+    top: 9px;
+    left: 36px;
+    z-index: 1;
+    > * {
+      margin: 0 0.5rem;
+    }
+  }
 }
 
 .day-content-container {

@@ -11,6 +11,7 @@ export interface IDayResponse {
   _id: string;
   date: Date;
   meals?: string[];
+  water: number;
 }
 
 export interface IDayRequest {

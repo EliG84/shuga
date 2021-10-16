@@ -16,6 +16,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HammerModule } from '@angular/platform-browser';
+import { WaterDialogComponent } from './components/dialogs/water-dialog/water-dialog.component';
 
 registerLocaleData(localeIl);
 
@@ -30,7 +31,9 @@ const classes: any[] = [
   ConfirmationComponent,
   CreateDayDialogComponent,
   CreateMealDialogComponent,
-  LoaderComponent]
+  LoaderComponent,
+  WaterDialogComponent
+]
 
 @NgModule({
   declarations: [...classes],

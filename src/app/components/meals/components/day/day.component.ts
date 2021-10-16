@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy, Input, ChangeDetectorRef, DoCheck, 
 import { MatDialog } from '@angular/material/dialog';
 import { first } from 'rxjs/operators';
 import { CreateMealDialogComponent } from 'src/app/components/dialogs/create-meal-dialog/create-meal-dialog.component';
+import { WaterDialogComponent } from 'src/app/components/dialogs/water-dialog/water-dialog.component';
 import { ISugarReading } from 'src/app/shared/api.models';
 import { dialogHeights, eDialogStatus } from 'src/app/shared/general-consts';
 
@@ -21,6 +22,8 @@ export class DayComponent implements DoCheck {
   meals: string[] | undefined;
   @Input()
   detailedView: boolean | undefined;
+  @Input()
+  water: number | undefined;
   @Output()
   deleteDayEmmiter = new EventEmitter<string>();
   reading: ISugarReading | undefined;
@@ -48,7 +51,24 @@ export class DayComponent implements DoCheck {
       if (res.status === eDialogStatus.CLOSE_OK && res.mealId) {
         this.meals?.push(res.mealId);
       }
-    })
+    });
+  }
+
+  editWater(): void {
+    const dialogRef = this.matDialog.open(WaterDialogComponent,
+      {
+        data: {
+          data: this.water,
+          dayId: this.dayId,
+          header: 'DIALOGS.MESSAGES.WATER_GLASSES'
+        },
+        height: dialogHeights.FULL_PERCENT,
+        width: dialogHeights.FULL_VH
+      });
+      dialogRef.afterClosed().pipe(first())
+      .subscribe((res: {status: eDialogStatus, amount: number}) => {
+          if (res.status === eDialogStatus.CLOSE_OK) this.water = res.amount;
+      });
   }
 
   removeMeal(event: string): void {
