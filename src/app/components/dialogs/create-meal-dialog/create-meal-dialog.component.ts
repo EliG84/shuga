@@ -4,8 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { MealsService } from 'src/app/shared/api-services/meals.service';
-import { SugarReadingsService } from 'src/app/shared/api-services/sugar-readings.service';
-import { IIngridient, IMealRequest, IMealResponse, ISugarReading } from 'src/app/shared/api.models';
+import { IIngridient, IMealRequest, IMealResponse } from 'src/app/shared/api.models';
 import { eDialogStatus, eMealTypes } from 'src/app/shared/general-consts';
 import { IDialogPayload, IDialogResponse } from 'src/app/shared/shared.interfaces';
 
@@ -13,7 +12,6 @@ import { IDialogPayload, IDialogResponse } from 'src/app/shared/shared.interface
   selector: 'app-create-meal-dialog',
   templateUrl: './create-meal-dialog.component.html',
   styleUrls: ['./create-meal-dialog.component.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CreateMealDialogComponent implements OnInit {
 
@@ -41,14 +39,13 @@ export class CreateMealDialogComponent implements OnInit {
   formData = new FormData();
   newIngridientForm = new FormGroup({
     name: new FormControl(null,Validators.required),
-    quantity: new FormControl(null,[Validators.min(1),Validators.max(20),Validators.required])
+    quantity: new FormControl(null,[Validators.max(20),Validators.required])
   });
   newMealId: string | undefined;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: IDialogPayload<IMealResponse | null>,
               private dialogRef: MatDialogRef<CreateMealDialogComponent>,
-              private mealService: MealsService,
-              private sugarReadingService: SugarReadingsService) { }
+              private mealService: MealsService) { }
 
   ngOnInit(): void {
     if (this.data.data) {

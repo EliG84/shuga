@@ -28,7 +28,7 @@
         </div>
         <div class="ingridient-amount-container">
           <label for="ingridient-amount">{{'DIALOGS.MESSAGES.INGRIDEINT_AMOUNT' | translate}}: </label>
-          <input formControlName='quantity' type="number" min="1" id="ingridient-amount">
+          <input formControlName='quantity' type="number" min="0" id="ingridient-amount">
         </div>
         <button class="form-submit-button"
                 [disabled]='newIngridientForm.invalid'
