@@ -35,7 +35,7 @@
     top: 9px;
     left: 36px;
     z-index: 1;
-    > * {
+    &:last-child {
       margin: 0 0.5rem;
     }
   }
