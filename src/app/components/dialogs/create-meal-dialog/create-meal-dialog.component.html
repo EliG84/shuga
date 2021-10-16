@@ -13,13 +13,13 @@
   </div>
   <div class="dialog-content">
     <div class="meal-date-time-container">
-      <p id="time" (click)='timePicker.openDialog()'><mat-icon>watch_later</mat-icon>{{date | date: 'HH:mm'}}</p>
-      <div class="display-none">
-        <igx-time-picker #timePicker
-                         class="time-picker-container"
-                         [(ngModel)]='date'>
-        </igx-time-picker>
-      </div>
+      <!-- <p id="time" (click)='timePicker.openDialog()'><mat-icon>watch_later</mat-icon>{{date | date: 'HH:mm'}}</p> -->
+      <igx-time-picker #timePicker
+                       class="time-picker-container"
+                       [format]="'H:mm'"
+                       [(ngModel)]='date'
+                       mode='dropdown'>
+      </igx-time-picker>
     </div>
       <div class="form-container" [formGroup]='newIngridientForm'>
         <div class="ingridient-name-container">

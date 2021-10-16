@@ -7,6 +7,7 @@ import { MealsService } from 'src/app/shared/api-services/meals.service';
 import { IIngridient, IMealRequest, IMealResponse } from 'src/app/shared/api.models';
 import { eDialogStatus, eMealTypes } from 'src/app/shared/general-consts';
 import { IDialogPayload, IDialogResponse } from 'src/app/shared/shared.interfaces';
+import { IgxTimePickerComponent, IgxTimePickerValidationFailedEventArgs } from "igniteui-angular";
 
 @Component({
   selector: 'app-create-meal-dialog',
@@ -149,5 +150,4 @@ export class CreateMealDialogComponent implements OnInit {
       // formData.delete('mealImage');
     });
   }
-
 }

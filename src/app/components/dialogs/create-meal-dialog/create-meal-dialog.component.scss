@@ -203,3 +203,14 @@
     margin: 1rem 0;
   }
 }
+
+.time-picker-container.igx-input-group.igx-input-group__bundle.igx-input-group__bundle-main {
+  label {
+    display: none !important;
+  }
+  input {
+    font-size: 2rem !important;
+    margin-bottom: 0.5rem !important;
+    text-align: center !important;
+  }
+}

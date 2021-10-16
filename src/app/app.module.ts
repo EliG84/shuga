@@ -1,5 +1,5 @@
 import { registerLocaleData, Location, LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { Inject, Injectable, LOCALE_ID, NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import localeIl from '@angular/common/locales/he';

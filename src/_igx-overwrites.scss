@@ -60,3 +60,27 @@ input, select {
 .igx-time-picker__item {
   width: 5rem;
 }
+
+.time-picker-container {
+  igx-input-group {
+    .igx-input-group__bundle {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      padding-bottom: 0.5rem;
+      margin: 0;
+      .igx-icon {
+        font-size: 2rem;
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+    label {
+      display: none;
+    }
+    input {
+      font-size: 2rem !important;
+      text-align: center !important;
+    }
+  }
+}
