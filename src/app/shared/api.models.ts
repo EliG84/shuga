@@ -1,10 +1,21 @@
 export interface ISugarReading {
   _id?: string;
   mealId?: string;
+  dayId?: string;
+  dayDate?: Date;
+  mealType?: number;
   date: Date;
   time: number;
   result: number;
   isMorningReading: boolean;
+}
+
+export interface ISugarReadingTable {
+  date: Date;
+  fasting: number | null;
+  morning: number | null;
+  afterNoon: number | null;
+  evening: number | null;
 }
 
 export interface IDayResponse {

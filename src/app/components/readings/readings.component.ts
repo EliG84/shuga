@@ -1,10 +1,10 @@
 import { Component, OnInit, ChangeDetectionStrategy, OnDestroy, ChangeDetectorRef, DoCheck } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { filter, first, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SugarReadingsService } from 'src/app/shared/api-services/sugar-readings.service';
-import { ISugarReading } from 'src/app/shared/api.models';
+import { ISugarReading, ISugarReadingTable } from 'src/app/shared/api.models';
 import { dialogHeights, eDialogComponentType, ePageRefresh } from 'src/app/shared/general-consts';
 import { DialogService } from 'src/app/shared/services/dialog.service';
 import { PageRefreshService } from 'src/app/shared/services/page-refresh.service';
@@ -19,8 +19,10 @@ import { ConfirmationComponent } from '../dialogs/confirmation/confirmation.comp
 export class ReadingsComponent implements OnInit, OnDestroy, DoCheck {
 
   destroy$ = new Subject();
-  readings$!: Observable<ISugarReading[]>;
   readings: ISugarReading[] = [];
+  displayedColumns = ['date', 'fasting', 'morning', 'afterNoon', 'evening'];
+  readingsTable : ISugarReadingTable[] = [];
+  fastingMode = this.route?.snapshot?.data?.isMorningReading;
 
 
   constructor(private sugarReadingsService: SugarReadingsService,
@@ -28,17 +30,21 @@ export class ReadingsComponent implements OnInit, OnDestroy, DoCheck {
               private dialogService: DialogService,
               private cd: ChangeDetectorRef,
               private matDialog: MatDialog,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.refreshService.refresh$
     .pipe(
       filter((source) => source === ePageRefresh.READINGS),
-      switchMap(() => this.sugarReadingsService.getAllReadings(this.route?.snapshot?.data?.isMorningReading)),
+      switchMap(() => this.sugarReadingsService.getAllReadings(this.fastingMode)),
       takeUntil(this.destroy$)
       ).subscribe((data) => {
         if (Array.isArray(data)) {
-          this.readings = data;
+          if (this.fastingMode) {
+            this.readings = data as ISugarReading[];
+          } else {
+            this.readingsTable = data as ISugarReadingTable[];
+          }
         }
       });
     this.refreshService.refresh$.next(ePageRefresh.READINGS);
