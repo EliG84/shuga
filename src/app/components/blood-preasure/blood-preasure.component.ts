@@ -11,7 +11,7 @@ import { IBloodPreasureResponse } from 'src/app/shared/api.models';
 export class BloodPreasureComponent implements OnInit, DoCheck {
 
   dataSource: IBloodPreasureResponse[] | undefined;
-  displayedColumns = ['date', 'sys', 'dia', 'pul'];
+  displayedColumns = ['date', 'pul', 'dia', 'sys'];
 
   constructor(private bpService: BloodPreasureService,
               private cd : ChangeDetectorRef) { }
