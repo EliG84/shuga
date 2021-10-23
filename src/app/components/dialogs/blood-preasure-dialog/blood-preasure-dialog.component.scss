@@ -1,0 +1,54 @@
+.dialog-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  > * {
+    width: 100%;
+    direction: rtl;
+  }
+  h6 {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .date {
+    margin: 0.5rem 0;
+  }
+}
+
+.dialog-header-top-container,
+.dialog-actions-container {
+  height: 5%;
+  button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.dialog-header-top-container {
+  margin-bottom: 1rem;
+}
+
+.measure-input-container {
+  display: flex;
+  flex-direction: column;
+  direction: ltr;
+  input {
+    border-bottom: 3px solid var(--blue-2);
+    flex: 1;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  label {
+    font-weight: 600;
+  };
+
+}
+
+.dialog-content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

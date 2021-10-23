@@ -7,6 +7,7 @@
       "MORNING_READINGS": "Morning measurements",
       "ALL_READINGS": "All measurements",
       "ADD_MORGINING_READING": "Add fasting measurement",
+      "BLOOD_PREASURE": "Blood preasure",
       "GRAPH": "Graphs",
       "LOGOUT": "Logout"
     }
@@ -27,6 +28,7 @@
     "MORNING_READINGS": "All fasting measurements",
     "ALL_READINGS": "All measurments",
     "ADD_MORGINING_READING": "Add fasting measurment",
+    "BLOOD_PREASURE": "Blood preasure measurements",
     "GRAPHS": "View graphs",
     "LOG_OUT": "Logout"
   },
@@ -70,7 +72,8 @@
       "INGRIDEINT_NAME": "Ingridient",
       "INGRIDEINT_AMOUNT": "Amount",
       "CURRENT_READING": "Sugar measurement",
-      "THE_RESULT": "Result"
+      "THE_RESULT": "Result",
+      "BLOOD_PREASURE": "Blood Preasure"
     }
   },
   "EMPTY_PAGE": {

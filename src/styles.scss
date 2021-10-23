@@ -101,7 +101,8 @@ app-header {
 
 [data-location="meals"],
 [data-location="morning-measurements"],
-[data-location="graphs"] {
+[data-location="graphs"],
+[data-location="blood-preasure"] {
   app-header {
     display: revert;
     visibility: revert;

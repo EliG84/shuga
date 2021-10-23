@@ -1,0 +1,30 @@
+<div class="dialog-container">
+
+  <div class="dialog-actions-top-container">
+    <mat-icon (click)='closeDialog()'>close</mat-icon>
+  </div>
+
+  <h6 class="header" *ngIf='header'>{{header | translate}}</h6>
+
+  <h6 class="date">{{date | date : 'dd/MM/yyyy'}}</h6>
+
+  <div class="dialog-content-container">
+    <div class="measure-input-container">
+      <label for="sys">Sys</label>
+      <input type="number" min="0" name="sys" id="sys" [(ngModel)]='sys'>
+    </div>
+    <div class="measure-input-container">
+      <label for="dia">Dia</label>
+      <input type="number" min="0" name="dia" id="dia" [(ngModel)]='dia'>
+    </div>
+    <div class="measure-input-container">
+      <label for="pul">Pul</label>
+      <input type="number" min="0" name="pul" id="pul" [(ngModel)]='pul'>
+    </div>
+  </div>
+
+  <div class="dialog-actions-container">
+    <button [disabled]='!sys || !dia || !pul || sys < 0 || dia < 0 || pul < 0' mat-raised-button (click)='update()'>{{ 'DIALOGS.UPDATE' | translate}}</button>
+  </div>
+
+</div>

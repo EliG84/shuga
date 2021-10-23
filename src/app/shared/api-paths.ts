@@ -21,7 +21,16 @@ export const DAY_API = {
   READ_ALL: 'read/all',
   CREATE: 'create',
   WATER: 'water',
+  GET_DAY: 'single',
   DELETE: 'delete',
+}
+
+export const PREASURE_API = {
+  BASE: 'preasure',
+  READ_ALL: 'read/all',
+  GET_SINGLE: 'single',
+  CREATE: 'create',
+  UPDATE: 'update'
 }
 
 export const MEAL_API = {

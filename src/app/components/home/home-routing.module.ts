@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppRoutingPath } from 'src/app/models/routing.models';
+import { HomeRoutingPath } from 'src/app/models/routing.models';
 import { dataAttributeKeys } from 'src/app/shared/general-consts';
 import { HomeComponent } from './home.component';
 
@@ -14,24 +14,29 @@ const routes: Routes = [
     path: '',
     children: [
       {
-        path: AppRoutingPath.MEALS,
+        path: HomeRoutingPath.MEALS,
         loadChildren: () => import('../meals/meals.module').then(m => m.MealsModule),
-        data: {attributeKey: dataAttributeKeys.LOCAITON, attributeValue: AppRoutingPath.MEALS}
+        data: {attributeKey: dataAttributeKeys.LOCAITON, attributeValue: HomeRoutingPath.MEALS}
       },
       {
-        path: AppRoutingPath.MORNING_READINGS,
+        path: HomeRoutingPath.MORNING_READINGS,
         loadChildren: () => import ('../readings/readings.module').then(m => m.ReadingsModule),
-        data: {attributeKey: dataAttributeKeys.LOCAITON, attributeValue: AppRoutingPath.MORNING_READINGS, isMorningReading: true}
+        data: {attributeKey: dataAttributeKeys.LOCAITON, attributeValue: HomeRoutingPath.MORNING_READINGS, isMorningReading: true}
       },
       {
-        path: AppRoutingPath.ALL_READINGS,
+        path: HomeRoutingPath.ALL_READINGS,
         loadChildren: () => import ('../readings/readings.module').then(m => m.ReadingsModule),
-        data: {attributeKey: dataAttributeKeys.LOCAITON, attributeValue: AppRoutingPath.MORNING_READINGS, isMorningReading: false}
+        data: {attributeKey: dataAttributeKeys.LOCAITON, attributeValue: HomeRoutingPath.MORNING_READINGS, isMorningReading: false}
       },
       {
-        path: AppRoutingPath.GRAPHS,
+        path: HomeRoutingPath.BLOOD_PREASURE,
+        loadChildren: () => import ('../blood-preasure/blood-preasure.module').then(m => m.BloodPreasureModule),
+        data: {attributeKey: dataAttributeKeys.LOCAITON, attributeValue: HomeRoutingPath.BLOOD_PREASURE, isMorningReading: false}
+      },
+      {
+        path: HomeRoutingPath.GRAPHS,
         loadChildren: () => import('../graphs/graphs.module').then(m => m.GraphsModule),
-        data: {attributeKey: dataAttributeKeys.LOCAITON, attributeValue: AppRoutingPath.GRAPHS}
+        data: {attributeKey: dataAttributeKeys.LOCAITON, attributeValue: HomeRoutingPath.GRAPHS}
       }
     ]
   }

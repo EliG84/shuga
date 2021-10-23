@@ -7,6 +7,7 @@
       "MORNING_READINGS": "צפיה במדדי צום",
       "ALL_READINGS": "לכל המדדים",
       "ADD_MORGINING_READING": "הוספת מדד צום",
+      "BLOOD_PREASURE": "מדדי לחץ דם",
       "GRAPH": "לגרפים",
       "LOGOUT": "התנתקי"
     }
@@ -27,6 +28,7 @@
     "ADD_MORGINING_READING": "הוספת מדד צום",
     "MORNING_READINGS": "צפיה  במדדי צום",
     "ALL_READINGS": "צפיה בכל המדדים",
+    "BLOOD_PREASURE": "מדדי לחץ דם",
     "GRAPHS": "מעבר לגרפים",
     "LOG_OUT": "התנתקי"
   },
@@ -70,7 +72,8 @@
       "INGRIDEINT_NAME": "מרכיב",
       "INGRIDEINT_AMOUNT": "כמות",
       "CURRENT_READING": "מדד סוכר",
-      "THE_RESULT": "המדד"
+      "THE_RESULT": "המדד",
+      "BLOOD_PREASURE": "מדדי לחץ דם"
     }
   },
   "EMPTY_PAGE": {

@@ -12,6 +12,7 @@ import { HeaderComponent } from './components/header/header.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatTableModule} from '@angular/material/table';
 
 // 3rd party imports
 import {
@@ -37,6 +38,7 @@ const externalModules: any[] = [
   MatSnackBarModule,
   IgxDatePickerModule,
   IgxTimePickerModule,
+  MatTableModule
 ];
 
 

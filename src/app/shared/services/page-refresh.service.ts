@@ -8,6 +8,7 @@ export class PageRefreshService {
 
   refresh$ = new Subject<number>();
   refreshMeal$ = new Subject<string>();
+  refreshDay$ = new Subject<string>();
 
   constructor() { }
 }

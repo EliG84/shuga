@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
-import { AppRoutingPath, MealsRoutingPath, RoutingPath } from 'src/app/models/routing.models';
+import { HomeRoutingPath, MealsRoutingPath, RoutingPath } from 'src/app/models/routing.models';
 import { dialogHeights, eDialogComponentType } from 'src/app/shared/general-consts';
 import { DialogService } from 'src/app/shared/services/dialog.service';
 
@@ -16,11 +16,11 @@ export class HomeComponent implements OnInit {
   menuItems = [
     {
       name: 'HOME.ADD_MEALS',
-      action: () => this.router.navigate(['/',RoutingPath.APP,AppRoutingPath.MEALS])
+      action: () => this.router.navigate(['/',RoutingPath.APP,HomeRoutingPath.MEALS])
     },
     {
       name: 'HOME.MEALS',
-      action: () => this.router.navigate(['/',RoutingPath.APP,AppRoutingPath.MEALS,MealsRoutingPath.DETAILED])
+      action: () => this.router.navigate(['/',RoutingPath.APP,HomeRoutingPath.MEALS,MealsRoutingPath.DETAILED])
     },
     {
       name: 'HOME.ADD_MORGINING_READING',
@@ -28,15 +28,19 @@ export class HomeComponent implements OnInit {
     },
     {
       name: 'HOME.MORNING_READINGS',
-      action: () => this.router.navigate(['/',RoutingPath.APP,AppRoutingPath.MORNING_READINGS])
+      action: () => this.router.navigate(['/',RoutingPath.APP,HomeRoutingPath.MORNING_READINGS])
     },
     {
       name: 'HOME.ALL_READINGS',
-      action: () => this.router.navigate(['/',RoutingPath.APP,AppRoutingPath.ALL_READINGS])
+      action: () => this.router.navigate(['/',RoutingPath.APP,HomeRoutingPath.ALL_READINGS])
+    },
+    {
+      name: 'HOME.BLOOD_PREASURE',
+      action: () => this.router.navigate(['/',RoutingPath.APP,HomeRoutingPath.BLOOD_PREASURE])
     },
     {
       name: 'HOME.GRAPHS',
-      action: () => this.router.navigate(['/',RoutingPath.APP,AppRoutingPath.GRAPHS])
+      action: () => this.router.navigate(['/',RoutingPath.APP,HomeRoutingPath.GRAPHS])
     },
     {
       name: 'HOME.LOG_OUT',

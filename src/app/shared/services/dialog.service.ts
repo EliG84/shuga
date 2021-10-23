@@ -25,7 +25,7 @@ export class DialogService {
     });
     dialogRef.afterClosed().pipe(first())
     .subscribe((payload: IDialogResponse) =>{
-      if (payload.status === eDialogStatus.CLOSE_OK) {
+      if (payload?.status === eDialogStatus.CLOSE_OK) {
         this.notifyRefreshService(payload);
       }
     });
@@ -54,6 +54,9 @@ export class DialogService {
         break;
       case ePageRefresh.MEALS:
         this.refreshService.refreshMeal$.next(payload.mealId);
+        break;
+      case ePageRefresh.DAY_SINGLE:
+        this.refreshService.refreshDay$.next(payload.dayId);
         break;
       default:
         break;

@@ -1,0 +1,35 @@
+:host {
+  height: calc(100vh - var(--app-header-height));
+}
+
+.blood-preasure-container {
+  width: 100%;
+  max-height: calc(100vh - var(--app-header-height));
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+
+  &--empty {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 0;
+    > * {
+      padding: 0;
+      margin: 0;
+      white-space: pre-wrap;
+    }
+  }
+}
+
+.blood-preasure-table {
+  background: transparent;
+  span {
+    font-weight: 500;
+  }
+
+  .column-headers {
+    font-weight: 600;
+  }
+}

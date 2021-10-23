@@ -25,6 +25,9 @@
       <mat-icon class="material-icons-outlined" (click)='editWater()'>local_drink</mat-icon>
     </div>
     <span class="date-span">{{date | date : 'dd/MM/YYYY'}}</span>
+    <div class="preasure-container">
+      <mat-icon class="material-icons-outlined" (click)='editBloodPreasure()'>speed</mat-icon>
+    </div>
     <mat-icon *ngIf='!!!meals?.length'
               class="delete-day"
               (click)='deleteDay()'

@@ -1,9 +1,9 @@
 import { Component, ChangeDetectionStrategy, Input, ChangeDetectorRef, DoCheck, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { first } from 'rxjs/operators';
+import { BloodPreasureDialogComponent } from 'src/app/components/dialogs/blood-preasure-dialog/blood-preasure-dialog.component';
 import { CreateMealDialogComponent } from 'src/app/components/dialogs/create-meal-dialog/create-meal-dialog.component';
 import { WaterDialogComponent } from 'src/app/components/dialogs/water-dialog/water-dialog.component';
-import { ISugarReading } from 'src/app/shared/api.models';
 import { dialogHeights, eDialogStatus } from 'src/app/shared/general-consts';
 
 @Component({
@@ -21,12 +21,13 @@ export class DayComponent implements DoCheck {
   @Input()
   meals: string[] | undefined;
   @Input()
+  bloodPreasureId: string | undefined | null;
+  @Input()
   detailedView: boolean | undefined;
   @Input()
   water: number | undefined;
   @Output()
   deleteDayEmmiter = new EventEmitter<string>();
-  reading: ISugarReading | undefined;
 
   constructor(private matDialog: MatDialog,
               private ck: ChangeDetectorRef) { }
@@ -48,7 +49,7 @@ export class DayComponent implements DoCheck {
     });
     dialogRef.afterClosed().pipe(first())
     .subscribe((res: {status: eDialogStatus, mealId?: string}) => {
-      if (res.status === eDialogStatus.CLOSE_OK && res.mealId) {
+      if (res?.status === eDialogStatus.CLOSE_OK && res.mealId) {
         this.meals?.push(res.mealId);
       }
     });
@@ -67,7 +68,25 @@ export class DayComponent implements DoCheck {
       });
       dialogRef.afterClosed().pipe(first())
       .subscribe((res: {status: eDialogStatus, amount: number}) => {
-          if (res.status === eDialogStatus.CLOSE_OK) this.water = res.amount;
+          if (res?.status === eDialogStatus.CLOSE_OK) this.water = res.amount;
+      });
+  }
+
+  editBloodPreasure(): void {
+    const dialogRef = this.matDialog.open(BloodPreasureDialogComponent,
+      {
+        data: {
+          data: this.bloodPreasureId,
+          date: this.date,
+          dayId: this.dayId,
+          header: 'DIALOGS.MESSAGES.BLOOD_PREASURE'
+        },
+        height: dialogHeights.FULL_PERCENT,
+        width: dialogHeights.FULL_VH
+      });
+      dialogRef.afterClosed().pipe(first())
+      .subscribe((res: {status: eDialogStatus, bloodPreasureId: string}) => {
+          if (res?.status === eDialogStatus.CLOSE_OK) this.bloodPreasureId = res.bloodPreasureId;
       });
   }
 

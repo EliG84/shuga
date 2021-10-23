@@ -8,11 +8,12 @@ export const AuthRoutingPath = {
   REGISTER: 'register',
 }
 
-export const AppRoutingPath = {
+export const HomeRoutingPath = {
   MEALS: 'meals',
   GRAPHS: 'graphs',
   MORNING_READINGS: 'morning-measurements',
-  ALL_READINGS: 'all-measurements'
+  ALL_READINGS: 'all-measurements',
+  BLOOD_PREASURE: 'blood-preasure'
 }
 
 export const MealsRoutingPath = {

@@ -19,6 +19,10 @@ export class DayService {
     return this.httpService.post(`${DAY_API.BASE}/${DAY_API.CREATE}`, body);
   }
 
+  getDayById(id: string): Observable<IDayResponse> {
+    return this.httpService.get(`${DAY_API.BASE}/${DAY_API.GET_DAY}/${id}`);
+  }
+
   updateWater(dayId: string, amount: number): Observable<IDayResponse> {
     return this.httpService.put(`${DAY_API.BASE}/${DAY_API.WATER}/${dayId}/${amount}`, {});
   }

@@ -17,6 +17,7 @@ import { LoaderComponent } from './shared/components/loader/loader.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HammerModule } from '@angular/platform-browser';
 import { WaterDialogComponent } from './components/dialogs/water-dialog/water-dialog.component';
+import { BloodPreasureDialogComponent } from './components/dialogs/blood-preasure-dialog/blood-preasure-dialog.component';
 
 registerLocaleData(localeIl);
 
@@ -32,7 +33,8 @@ const classes: any[] = [
   CreateDayDialogComponent,
   CreateMealDialogComponent,
   LoaderComponent,
-  WaterDialogComponent
+  WaterDialogComponent,
+  BloodPreasureDialogComponent
 ]
 
 @NgModule({

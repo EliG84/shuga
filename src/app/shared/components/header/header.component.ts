@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { ILanguageConfig } from 'src/app/models/language.models';
-import { AppRoutingPath, MealsRoutingPath, RoutingPath } from 'src/app/models/routing.models';
+import { HomeRoutingPath, MealsRoutingPath, RoutingPath } from 'src/app/models/routing.models';
 import { LanguageService } from '../../services/language.service';
 import { SugarReadingDialogComponent } from 'src/app/components/dialogs/sugar-reading-dialog/sugar-reading-dialog.component';
 import { first } from 'rxjs/operators';
@@ -29,12 +29,12 @@ export class HeaderComponent {
     {
       name: 'HEADER.NAVIGATION.MEALS_ADD',
       icon: 'list_alt',
-      action: () => this.router.navigate(['/', RoutingPath.APP,AppRoutingPath.MEALS])
+      action: () => this.router.navigate(['/', RoutingPath.APP,HomeRoutingPath.MEALS])
     },
     {
       name: 'HEADER.NAVIGATION.MEALS_LIST',
       icon: 'list_alt',
-      action: () => this.router.navigate(['/', RoutingPath.APP,AppRoutingPath.MEALS,MealsRoutingPath.DETAILED])
+      action: () => this.router.navigate(['/', RoutingPath.APP,HomeRoutingPath.MEALS,MealsRoutingPath.DETAILED])
     },
     {
       name: 'HEADER.NAVIGATION.ADD_MORGINING_READING',
@@ -44,17 +44,22 @@ export class HeaderComponent {
     {
       name: 'HEADER.NAVIGATION.MORNING_READINGS',
       icon: 'wb_sunny',
-      action: () => this.router.navigate(['/', RoutingPath.APP,AppRoutingPath.MORNING_READINGS])
+      action: () => this.router.navigate(['/', RoutingPath.APP,HomeRoutingPath.MORNING_READINGS])
     },
     {
       name: 'HEADER.NAVIGATION.ALL_READINGS',
       icon: ' list_alt',
-      action: () => this.router.navigate(['/', RoutingPath.APP,AppRoutingPath.ALL_READINGS])
+      action: () => this.router.navigate(['/', RoutingPath.APP,HomeRoutingPath.ALL_READINGS])
+    },
+    {
+      name: 'HEADER.NAVIGATION.BLOOD_PREASURE',
+      icon: 'timeline',
+      action: () => this.router.navigate(['/', RoutingPath.APP,HomeRoutingPath.BLOOD_PREASURE])
     },
     {
       name: 'HEADER.NAVIGATION.GRAPH',
       icon: 'timeline',
-      action: () => this.router.navigate(['/', RoutingPath.APP,AppRoutingPath.GRAPHS])
+      action: () => this.router.navigate(['/', RoutingPath.APP,HomeRoutingPath.GRAPHS])
     },
     {
       name: 'HEADER.NAVIGATION.LOGOUT',

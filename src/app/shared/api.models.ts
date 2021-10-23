@@ -22,12 +22,22 @@ export interface IDayResponse {
   _id: string;
   date: Date;
   meals?: string[];
+  bloodPreasureId?: string;
   water: number;
 }
 
 export interface IDayRequest {
   date: Date;
   meals: string[];
+}
+
+export interface IBloodPreasureResponse {
+  _id?: string;
+  dayId: string;
+  date: Date;
+  sys: number;
+  dia: number;
+  pul: number;
 }
 
 export interface IMealResponse {

@@ -10,7 +10,8 @@ export const dataAttributeKeys = {
 export enum ePageRefresh {
   READINGS = 1,
   DAYS,
-  MEALS
+  MEALS,
+  DAY_SINGLE
 }
 
 export enum eDialogComponentType {
